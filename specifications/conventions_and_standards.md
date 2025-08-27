@@ -1,0 +1,21 @@
+# Important Conventions and Standards
+
+- **Language Standard**: TypeScript with ES2022 target
+- **Build Tool**: TypeScript Compiler (tsc) with tsx for development
+- **Development Environment**: Cross-platform (Mac/Windows/Linux) + Node.js
+- **Runtime Environment**: Node.js
+- **Documentation Standards**: 
+  - Each executable exercise must contain README.md with compilation, running, and usage instructions
+  - Each implementation file must contain usage instructions
+  - Test files need to include instructions on how to run tests
+- **Development Standards**:
+  - All code comments and documentation must be in English
+  - Do not commit code changes to Git unless explicitly instructed by the user
+  - Before executing any task, output a specific implementation plan and wait for user confirmation before proceeding
+- **Quality Assurance**:
+  - Write unit tests to verify core functionality
+  - Use code coverage tools to ensure test quality (target coverage > 80%)
+  - Unit tests must be written in the specified directory according to project standards
+  - After each task is completed, all unit tests must be verified to pass successfully as a validation point
+  - Verify unit tests are successful by running `npm test` and checking for test pass output
+  - Projects must be able to successfully execute `tsc` for compilation

@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "Running pre-commit checks..." && npm run lint && npm test && npm run format:check && echo "Pre-commit checks completed!"
