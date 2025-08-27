@@ -5,16 +5,19 @@ Thank you for your interest in contributing to the TypeScript Learning Playgroun
 ## How to Contribute
 
 ### Reporting Issues
+
 - Use the GitHub issue tracker to report bugs or suggest enhancements
 - Clearly describe the issue, including steps to reproduce if applicable
 - Include relevant information such as TypeScript version, Node.js version, and operating system
 
 ### Suggesting Enhancements
+
 - Before creating enhancement suggestions, please check if a similar idea already exists
 - Provide a clear and detailed explanation of the proposed enhancement
 - Explain why this enhancement would be useful to learners
 
 ### Code Contributions
+
 1. Fork the repository
 2. Create a new branch for your feature or bug fix
 3. Follow the coding standards outlined in `specifications/coding_standards.md`
@@ -25,17 +28,20 @@ Thank you for your interest in contributing to the TypeScript Learning Playgroun
 ## Development Workflow
 
 ### Setting Up the Development Environment
+
 1. Clone the repository
 2. Run `npm install` to install dependencies
 3. Verify your setup by running `npm test`
 
 ### Code Quality
+
 - Follow the TypeScript coding standards in `specifications/coding_standards.md`
 - Ensure code is properly formatted using Prettier
 - All code must pass ESLint checks
 - Write meaningful commit messages following the guidelines in `specifications/git_standards.md`
 
 ### Testing
+
 - Write unit tests for new functionality
 - Maintain test coverage above 80%
 - Run tests with `npm test` before submitting changes

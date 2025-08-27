@@ -6,7 +6,7 @@ prompt = """
 1. Stage **all changes** in the repository (including modified and untracked files).
 2. Analyze the full set of changes and generate a clear, conventional commit message
    following the style guide defined in @specifications/git_standards.md.
-3. Commit all changes **to the local Git repository** with the generated message.
-4. After committing, run the script `scripts/clean_commit.sh` to rewrite and clean up the commit message.
+3. Commit all changes **to the local Git repository** with the generated message, **without asking for confirmation**.
+4. After committing, must run the script `bash scripts/clean_commit.sh` to rewrite and clean up the commit message.
 5. If there are no changes to commit, print: "No changes to commit."
 """

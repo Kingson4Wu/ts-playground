@@ -164,6 +164,7 @@ ts-playground/
 ## Directory Descriptions
 
 ### Root Level
+
 - `.gitignore`: Git ignore patterns for TypeScript/Node.js projects
 - `LICENSE`: MIT License file
 - `README.md`: Main documentation with learning pathway
@@ -174,14 +175,18 @@ ts-playground/
 - `.prettierrc`: Prettier configuration for code formatting
 
 ### Stage Directories
+
 Each stage (1-4) has its own directory with:
+
 - `tsconfig.json`: Stage-specific TypeScript configuration
 - `package.json`: Stage-specific dependencies (if needed)
 - `exercises/`: Contains all practice exercises for that stage
 - `practice/`: Playground for experimentation
 
 ### Exercise Structure
+
 Each exercise follows a consistent structure:
+
 - `src/`: Source code
 - `tests/`: Test files
 - `package.json`: Exercise-specific dependencies

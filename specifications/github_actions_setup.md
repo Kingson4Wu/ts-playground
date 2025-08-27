@@ -10,6 +10,7 @@ This project includes a GitHub Actions workflow that automatically verifies the 
 ## Setup Instructions
 
 1. After pushing to GitHub, the workflow will automatically run on:
+
    - Every push to the `main` branch
    - Every pull request to the `main` branch
 
@@ -23,6 +24,7 @@ This project includes a GitHub Actions workflow that automatically verifies the 
 ## Customizing the Workflow
 
 If you want to modify the workflow:
+
 1. Edit `.github/workflows/ci.yml`
 2. The workflow will automatically update on the next push
 
@@ -36,6 +38,7 @@ The README.md file contains a badge that shows the status of the workflow. After
 ## Viewing Workflow Results
 
 You can view the results of the workflow runs:
+
 1. Go to the "Actions" tab in your GitHub repository
 2. Click on individual workflow runs to see detailed logs
 3. The badge in the README will show the status of the latest run

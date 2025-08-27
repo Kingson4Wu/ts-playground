@@ -1,6 +1,7 @@
 # AI Tool Compatibility
 
 This project specification is designed to be compatible with various AI coding assistants, including:
+
 - Qwen Code
 - Gemini CLI
 - Claude Code

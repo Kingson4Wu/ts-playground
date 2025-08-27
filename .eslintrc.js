@@ -8,8 +8,8 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   extends: [
     'eslint:recommended',
-    '@typescript-eslint/recommended',
-    'prettier'
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
   ],
   env: {
     node: true,
@@ -25,7 +25,7 @@ module.exports = {
     'no-console': 'warn',
     'prefer-const': 'error',
     'no-var': 'error',
-    'prefer-arrow-callback': 'error'
+    'prefer-arrow-callback': 'error',
   },
   ignorePatterns: ['.eslintrc.js', 'dist/', 'node_modules/'],
 };
