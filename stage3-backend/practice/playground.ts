@@ -1,20 +1,21 @@
 // Simple playground file for Stage 3 exercises
-console.log('Stage 3: Backend API Development');
+// console.log('Stage 3: Backend API Development');
 
 // Example API code structure
 interface APIRequest {
   method: string;
   url: string;
   headers: Record<string, string>;
-  body?: any;
+  body?: unknown;
 }
 
 interface APIResponse {
   status: number;
   headers: Record<string, string>;
-  body?: any;
+  body?: unknown;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 class SimpleAPIHandler {
   public handleRequest(req: APIRequest): APIResponse {
     switch (req.method) {
@@ -48,4 +49,4 @@ class SimpleAPIHandler {
   }
 }
 
-console.log('API Handler initialized');
+// console.log('API Handler initialized');

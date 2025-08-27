@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
 - Project structure and initial documentation
 - Configuration files for TypeScript, ESLint, Prettier, and Jest
 - Specifications directory with comprehensive documentation
@@ -17,17 +18,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Code of conduct
 
 ### Changed
+
 - Renamed `docs/` directory to `specifications/` for clarity
 - Updated all references to use the new `specifications/` directory
 - Merged redundant coding standards documentation
 
 ### Fixed
+
 - Resolved overlapping content between coding standards documents
 - Updated broken links in documentation files
 
 ## [1.0.0] - 2025-08-26
 
 ### Added
+
 - Initial project structure based on four-stage learning pathway
 - Comprehensive documentation for TypeScript learning
 - Tooling configuration for development environment

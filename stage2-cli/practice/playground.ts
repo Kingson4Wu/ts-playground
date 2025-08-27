@@ -1,7 +1,8 @@
 // Simple playground file for Stage 2 exercises
-console.log('Stage 2: Command-Line Interface (CLI) Development');
+// console.log('Stage 2: Command-Line Interface (CLI) Development');
 
 // Example CLI code structure
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function parseArguments(args: string[]): Record<string, string> {
   const result: Record<string, string> = {};
   for (let i = 0; i < args.length; i++) {
@@ -18,5 +19,3 @@ function parseArguments(args: string[]): Record<string, string> {
   }
   return result;
 }
-
-console.log('Parsed arguments:', parseArguments(process.argv.slice(2)));

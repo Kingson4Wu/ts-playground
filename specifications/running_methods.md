@@ -1,6 +1,7 @@
 # Running Methods
 
 ## Development Scripts
+
 ```bash
 # Install dependencies
 npm install
@@ -22,7 +23,9 @@ npm run format
 ```
 
 ## Exercise Development
+
 Each exercise can be developed independently:
+
 1. Navigate to the exercise directory
 2. Install dependencies: `npm install`
 3. Run development server: `npm run dev`

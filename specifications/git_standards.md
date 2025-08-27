@@ -3,6 +3,7 @@
 To maintain clear and consistent commit history, we follow professional Git commit standards:
 
 ## Commit Message Format
+
 ```
 <type>(<scope>): <subject>
 
@@ -12,6 +13,7 @@ To maintain clear and consistent commit history, we follow professional Git comm
 ```
 
 ## Commit Types
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `bug`: Bug fix (synonymous with `fix`)
@@ -26,7 +28,9 @@ To maintain clear and consistent commit history, we follow professional Git comm
 - `revert`: Rollback previous commit
 
 ## Scope
+
 Scope should identify the stage or component affected by the commit, such as:
+
 - `stage1`
 - `stage2/cli-tools`
 - `stage3/user-api`
@@ -34,6 +38,7 @@ Scope should identify the stage or component affected by the commit, such as:
 - `config`
 
 ## Commit Message Standards
+
 1. Write commit messages in English
 2. First line is a brief description (<72 characters)
 3. Second line must be a genuine blank line (not using `\n` character)
@@ -45,6 +50,7 @@ Scope should identify the stage or component affected by the commit, such as:
 **Note:** When editing documentation files like this one, ensure that actual line breaks are used instead of `\n` characters for proper formatting.
 
 ## Examples
+
 ```
 feat(stage1/calculator): implement basic arithmetic operations
 

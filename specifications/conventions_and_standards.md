@@ -4,7 +4,7 @@
 - **Build Tool**: TypeScript Compiler (tsc) with tsx for development
 - **Development Environment**: Cross-platform (Mac/Windows/Linux) + Node.js
 - **Runtime Environment**: Node.js
-- **Documentation Standards**: 
+- **Documentation Standards**:
   - Each executable exercise must contain README.md with compilation, running, and usage instructions
   - Each implementation file must contain usage instructions
   - Test files need to include instructions on how to run tests

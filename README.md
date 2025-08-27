@@ -13,59 +13,66 @@ The learning journey is divided into four progressive stages, each focusing on s
 **Objective:** Gain a solid understanding of TypeScript's core syntax and type system.
 
 **Topics Covered:**
-*   **Variables and Types:** `let/const`, primitive types (`number`, `string`, `boolean`), `any`, `unknown`, arrays, tuples, enums, union types, intersection types, type assertions, and type inference.
-*   **Functions and Interfaces:** Function parameter and return types, optional/default parameters, defining contracts with `interface` and `type` aliases, function types.
-*   **Classes and OOP:** Class definitions, inheritance, access modifiers (`public`, `private`, `protected`), abstract classes, implementing interfaces, static members, getters/setters.
-*   **Advanced Types:** Generics (functions, classes, interfaces), conditional types, mapped types, indexed access types.
-*   **Modules:** ES Module syntax (`import`/`export`), understanding module resolution in Node.js.
+
+- **Variables and Types:** `let/const`, primitive types (`number`, `string`, `boolean`), `any`, `unknown`, arrays, tuples, enums, union types, intersection types, type assertions, and type inference.
+- **Functions and Interfaces:** Function parameter and return types, optional/default parameters, defining contracts with `interface` and `type` aliases, function types.
+- **Classes and OOP:** Class definitions, inheritance, access modifiers (`public`, `private`, `protected`), abstract classes, implementing interfaces, static members, getters/setters.
+- **Advanced Types:** Generics (functions, classes, interfaces), conditional types, mapped types, indexed access types.
+- **Modules:** ES Module syntax (`import`/`export`), understanding module resolution in Node.js.
 
 **Practice Exercises:**
-*   Simple CLI Calculator
-*   Random Password Generator
-*   File Content Processing Script
+
+- Simple CLI Calculator
+- Random Password Generator
+- File Content Processing Script
 
 ### Stage 2: Command-Line Interface (CLI) Development
 
 **Objective:** Develop CLI tools in TypeScript and understand the process of packaging and publishing them via npm.
 
 **Topics Covered:**
-*   **Node.js CLI Basics:** Parsing command-line arguments (`process.argv`), console output, asynchronous file system operations (`fs/promises`).
-*   **CLI Frameworks:** Using libraries like `commander` or `yargs` for argument parsing and subcommands, `chalk` for colored output, `inquirer` for interactive prompts.
-*   **TypeScript Project Configuration:** `tsconfig.json` setup, `npm scripts` for compilation and bundling, understanding declaration files (`.d.ts`).
-*   **Publishing:** The `npm publish` workflow, installing and running tools globally (`npm i -g`) or via `npx`.
+
+- **Node.js CLI Basics:** Parsing command-line arguments (`process.argv`), console output, asynchronous file system operations (`fs/promises`).
+- **CLI Frameworks:** Using libraries like `commander` or `yargs` for argument parsing and subcommands, `chalk` for colored output, `inquirer` for interactive prompts.
+- **TypeScript Project Configuration:** `tsconfig.json` setup, `npm scripts` for compilation and bundling, understanding declaration files (`.d.ts`).
+- **Publishing:** The `npm publish` workflow, installing and running tools globally (`npm i -g`) or via `npx`.
 
 **Practice Exercises:**
-*   Batch File Renaming Tool
-*   JSON/CSV Data Conversion Utility
-*   Publishing a Simple CLI Tool to npm
+
+- Batch File Renaming Tool
+- JSON/CSV Data Conversion Utility
+- Publishing a Simple CLI Tool to npm
 
 ### Stage 3: Backend API Development
 
 **Objective:** Build robust backend services using TypeScript with Node.js, integrating databases and ensuring type safety across the stack.
 
 **Topics Covered:**
-*   **Node.js Frameworks:** Building APIs with `express` or `fastify`.
-*   **HTTP Fundamentals:** Handling GET, POST, PUT, DELETE requests, parsing JSON requests/responses, middleware patterns.
-*   **Database Integration:** Performing CRUD operations using ORMs like `TypeORM` or `Prisma`, mapping database records to TypeScript types.
-*   **Type Safety Practices:** Defining interfaces for API requests/responses (DTOs) to ensure consistency between client and server.
-*   **Project Structure:** Organizing code into layers (routes, services, models), testing strategies (`Jest`, `vitest`).
-*   **Development Workflow:** Compiling TypeScript (`tsc`) and running the application.
+
+- **Node.js Frameworks:** Building APIs with `express` or `fastify`.
+- **HTTP Fundamentals:** Handling GET, POST, PUT, DELETE requests, parsing JSON requests/responses, middleware patterns.
+- **Database Integration:** Performing CRUD operations using ORMs like `TypeORM` or `Prisma`, mapping database records to TypeScript types.
+- **Type Safety Practices:** Defining interfaces for API requests/responses (DTOs) to ensure consistency between client and server.
+- **Project Structure:** Organizing code into layers (routes, services, models), testing strategies (`Jest`, `vitest`).
+- **Development Workflow:** Compiling TypeScript (`tsc`) and running the application.
 
 **Practice Exercises:**
-*   User Management RESTful API (CRUD)
-*   To-Do List Service with Database
-*   Simulated Microservices Interaction
-*   Small GraphQL API Implementation
+
+- User Management RESTful API (CRUD)
+- To-Do List Service with Database
+- Simulated Microservices Interaction
+- Small GraphQL API Implementation
 
 ### Stage 4: Production Readiness & Optimization
 
 **Objective:** Prepare TypeScript applications for production environments by focusing on performance, monitoring, deployment, and development tooling.
 
 **Topics Covered:**
-*   **Performance:** Understanding Node.js single-threaded nature, using `Worker Threads` for CPU-intensive tasks.
-*   **Observability:** Integrating logging libraries like `pino` or `winston`.
-*   **Deployment:** Containerizing applications with Docker and deploying Node.js services.
-*   **Toolchain:** Setting up linters (`ESLint`), formatters (`Prettier`), git hooks (`Husky`), and optimizing the TypeScript compilation process.
+
+- **Performance:** Understanding Node.js single-threaded nature, using `Worker Threads` for CPU-intensive tasks.
+- **Observability:** Integrating logging libraries like `pino` or `winston`.
+- **Deployment:** Containerizing applications with Docker and deploying Node.js services.
+- **Toolchain:** Setting up linters (`ESLint`), formatters (`Prettier`), git hooks (`Husky`), and optimizing the TypeScript compilation process.
 
 ## Project Structure
 
