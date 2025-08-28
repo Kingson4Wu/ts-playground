@@ -34,7 +34,7 @@ This document consolidates all the learning exercises and implementation tasks f
 
 ### Practice Exercises
 
-- [ ] User Management RESTful API (CRUD)
+- [x] User Management RESTful API (CRUD)
 - [ ] To-Do List Service with Database
 - [ ] Simulated Microservices Interaction
 - [ ] Small GraphQL API Implementation
