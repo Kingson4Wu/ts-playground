@@ -26,7 +26,7 @@ This document consolidates all the learning exercises and implementation tasks f
 
 ### Practice Exercises
 
-- [ ] Batch File Renaming Tool
+- [x] Batch File Renaming Tool
 - [ ] JSON/CSV Data Conversion Utility
 - [ ] Publishing a Simple CLI Tool to npm
 

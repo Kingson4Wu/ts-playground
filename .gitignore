@@ -143,3 +143,4 @@ vite.config.ts.timestamp-*
 Thumbs.db
 *.swp
 *.swo
+scripts/rewrite_git_msg.sh
