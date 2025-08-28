@@ -1,0 +1,55 @@
+{
+  "name": "@kingsonwu/text-analyzer-cli",
+  "version": "1.0.0",
+  "description": "A simple CLI tool for analyzing text files",
+  "keywords": [
+    "cli",
+    "text",
+    "analysis",
+    "words",
+    "characters",
+    "lines"
+  ],
+  "author": "Kingson Wu",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "text-analyzer": "./bin/cli-tool"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/",
+    "bin/",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "test": "jest --config=jest.config.cjs",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "commander": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^20.0.0",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kingson4Wu/ts-playground.git"
+  },
+  "homepage": "https://github.com/Kingson4Wu/ts-playground/tree/main/stage2-cli/exercises/npm-publisher",
+  "bugs": {
+    "url": "https://github.com/Kingson4Wu/ts-playground/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

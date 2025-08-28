@@ -28,7 +28,7 @@ This document consolidates all the learning exercises and implementation tasks f
 
 - [x] Batch File Renaming Tool
 - [x] JSON/CSV Data Conversion Utility
-- [ ] Publishing a Simple CLI Tool to npm
+- [x] Publishing a Simple CLI Tool to npm
 
 ## Stage 3: Backend API Development
 
