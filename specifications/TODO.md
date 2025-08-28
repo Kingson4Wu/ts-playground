@@ -36,7 +36,7 @@ This document consolidates all the learning exercises and implementation tasks f
 
 - [x] User Management RESTful API (CRUD)
 - [x] To-Do List Service with Database
-- [ ] Simulated Microservices Interaction
+- [x] Simulated Microservices Interaction
 - [ ] Small GraphQL API Implementation
 
 ## Stage 4: Production Readiness & Optimization
