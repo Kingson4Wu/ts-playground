@@ -1,3 +1,4 @@
+/** @type {import('ts-jest').JestConfigWithTsJest} */
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
@@ -7,7 +8,7 @@ module.exports = {
     '**/?(*.)+(spec|test).+(ts|tsx|js)',
   ],
   transform: {
-    '^.+.(ts|tsx)$': 'ts-jest',
+    '^.+\\.(ts|tsx)$': 'ts-jest',
   },
   collectCoverageFrom: [
     'src/**/*.{ts,tsx}',
@@ -16,4 +17,16 @@ module.exports = {
   ],
   coverageDirectory: 'coverage',
   coverageReporters: ['text', 'lcov', 'html'],
+  extensionsToTreatAsEsm: ['.ts'],
+  moduleNameMapper: {
+    '^(\\.{1,2}/.*)\\.js$': '$1',
+  },
+  transform: {
+    '^.+\\.[tj]sx?$': [
+      'ts-jest',
+      {
+        useESM: true,
+      },
+    ],
+  },
 };

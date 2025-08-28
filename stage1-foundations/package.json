@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Stage 1: Core TypeScript Fundamentals",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "tsx watch",
     "build": "tsc",
-    "test": "jest",
+    "test": "jest --config=jest.config.cjs",
     "format:check": "prettier --check .",
     "format": "prettier --write ."
   },

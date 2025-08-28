@@ -18,7 +18,7 @@ This document consolidates all the learning exercises and implementation tasks f
 
 ### Practice Exercises
 
-- [ ] Simple CLI Calculator
+- [x] Simple CLI Calculator
 - [ ] Random Password Generator
 - [ ] File Content Processing Script
 
