@@ -20,7 +20,7 @@ This document consolidates all the learning exercises and implementation tasks f
 
 - [x] Simple CLI Calculator
 - [x] Random Password Generator
-- [ ] File Content Processing Script
+- [x] File Content Processing Script
 
 ## Stage 2: Command-Line Interface (CLI) Development
 
