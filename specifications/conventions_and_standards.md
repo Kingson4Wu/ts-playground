@@ -19,3 +19,8 @@
   - After each task is completed, all unit tests must be verified to pass successfully as a validation point
   - Verify unit tests are successful by running `npm test` and checking for test pass output
   - Projects must be able to successfully execute `tsc` for compilation
+  - All tasks must meet the acceptance criteria defined in [task_completion_criteria.md](task_completion_criteria.md):
+    - All tests pass: `npm test`
+    - Code formatting is correct: `npm run format:check`
+    - Project builds successfully: `npm run build`
+    - Code passes linting checks: `npm run lint`

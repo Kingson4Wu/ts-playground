@@ -9,3 +9,8 @@
 7. Regularly review and update all scripts to ensure they function correctly with current project dependencies
 8. Verify that project builds and tests run successfully before committing changes
 9. Optimize script performance by adding appropriate flags (e.g., --no-verify) when needed to prevent unnecessary failures
+10. Ensure all tasks meet acceptance criteria as defined in [task_completion_criteria.md](task_completion_criteria.md):
+    - All tests pass: `npm test`
+    - Code formatting is correct: `npm run format:check`
+    - Project builds successfully: `npm run build`
+    - Code passes linting checks: `npm run lint`

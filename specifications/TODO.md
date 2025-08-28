@@ -55,3 +55,14 @@ This file serves as a task list for tracking implementation progress:
 3. Update this file as new exercises are planned or completed
 
 For detailed requirements and learning objectives for each exercise, refer to the README.md file.
+
+## Task Completion Criteria
+
+All tasks must meet the acceptance criteria defined in [task_completion_criteria.md](task_completion_criteria.md):
+
+- All tests must pass: `npm test`
+- Code formatting must be correct: `npm run format:check`
+- Project must build successfully: `npm run build`
+- Code must pass linting checks: `npm run lint`
+
+These criteria must be verified before marking any task as complete.
