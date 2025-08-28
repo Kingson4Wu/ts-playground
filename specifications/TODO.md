@@ -19,7 +19,7 @@ This document consolidates all the learning exercises and implementation tasks f
 ### Practice Exercises
 
 - [x] Simple CLI Calculator
-- [ ] Random Password Generator
+- [x] Random Password Generator
 - [ ] File Content Processing Script
 
 ## Stage 2: Command-Line Interface (CLI) Development
