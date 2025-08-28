@@ -22,4 +22,4 @@ msg=$(echo "$msg" | sed '/./,$!d' | sed -e :a -e '/^\n*$/{$d;N;};/\n$/ba')
 # 使用 --amend 重写最新提交信息
 GIT_COMMITTER_DATE="$(git log -1 --pretty=format:%cI)" \
 GIT_AUTHOR_DATE="$(git log -1 --pretty=format:%aI)" \
-git commit --amend -m "$msg" --no-edit
+git commit --amend -m "$msg" --no-edit --no-verify
