@@ -15,27 +15,30 @@ Part of a simulated microservices architecture.
 ## API Endpoints
 
 ### Base URL
+
 `/api/v1`
 
 ### Order Endpoints
 
-| Method | Endpoint                    | Description                   |
-|--------|-----------------------------|-------------------------------|
-| GET    | `/orders`                   | Get all orders                |
-| GET    | `/orders/:id`               | Get order by ID               |
-| POST   | `/orders`                   | Create a new order            |
-| PUT    | `/orders/:id/status`        | Update order status           |
-| POST   | `/orders/:id/process`       | Process an order              |
-| DELETE | `/orders/:id`               | Cancel an order               |
+| Method | Endpoint              | Description         |
+| ------ | --------------------- | ------------------- |
+| GET    | `/orders`             | Get all orders      |
+| GET    | `/orders/:id`         | Get order by ID     |
+| POST   | `/orders`             | Create a new order  |
+| PUT    | `/orders/:id/status`  | Update order status |
+| POST   | `/orders/:id/process` | Process an order    |
+| DELETE | `/orders/:id`         | Cancel an order     |
 
 ## Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/Kingson4Wu/ts-playground.git
    ```
 
 2. Navigate to the service directory:
+
    ```bash
    cd ts-playground/stage3-backend/exercises/microservices/service-a
    ```
@@ -48,11 +51,13 @@ Part of a simulated microservices architecture.
 ## Running the Service
 
 ### Development Mode
+
 ```bash
 npm run dev
 ```
 
 ### Production Mode
+
 ```bash
 npm run build
 npm start
@@ -72,11 +77,13 @@ This service communicates with the Customer & Product Service (Service B) at `ht
 ## API Documentation
 
 ### Get All Orders
+
 ```
 GET /api/v1/orders
 ```
 
 **Response:**
+
 ```json
 [
   {
@@ -92,11 +99,13 @@ GET /api/v1/orders
 ```
 
 ### Get Order by ID
+
 ```
 GET /api/v1/orders/:id
 ```
 
 **Response:**
+
 ```json
 {
   "id": 1,
@@ -110,11 +119,13 @@ GET /api/v1/orders/:id
 ```
 
 ### Create Order
+
 ```
 POST /api/v1/orders
 ```
 
 **Request Body:**
+
 ```json
 {
   "customerId": 1,
@@ -124,6 +135,7 @@ POST /api/v1/orders
 ```
 
 **Response:**
+
 ```json
 {
   "id": 1,
@@ -137,11 +149,13 @@ POST /api/v1/orders
 ```
 
 ### Update Order Status
+
 ```
 PUT /api/v1/orders/:id/status
 ```
 
 **Request Body:**
+
 ```json
 {
   "status": "processing"
@@ -149,6 +163,7 @@ PUT /api/v1/orders/:id/status
 ```
 
 **Response:**
+
 ```json
 {
   "id": 1,
@@ -162,11 +177,13 @@ PUT /api/v1/orders/:id/status
 ```
 
 ### Process Order
+
 ```
 POST /api/v1/orders/:id/process
 ```
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -175,11 +192,13 @@ POST /api/v1/orders/:id/process
 ```
 
 ### Cancel Order
+
 ```
 DELETE /api/v1/orders/:id
 ```
 
 **Response:**
+
 ```
 204 No Content
 ```
@@ -198,7 +217,7 @@ All error responses follow the same format:
 ### Common HTTP Status Codes
 
 | Status Code | Description           |
-|-------------|-----------------------|
+| ----------- | --------------------- |
 | 200         | OK                    |
 | 201         | Created               |
 | 204         | No Content            |
@@ -209,6 +228,7 @@ All error responses follow the same format:
 ## Testing
 
 Run the test suite:
+
 ```bash
 npm test
 ```
@@ -216,6 +236,7 @@ npm test
 ## Implementation Details
 
 This service demonstrates:
+
 - Microservices architecture concepts
 - HTTP communication between services
 - API design for service-to-service interaction

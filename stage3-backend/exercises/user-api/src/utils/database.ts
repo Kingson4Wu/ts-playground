@@ -18,7 +18,9 @@ let nextId = 1;
  * @param user - User data to create
  * @returns Created user
  */
-export function createUser(user: Omit<User, 'id' | 'createdAt' | 'updatedAt'>): User {
+export function createUser(
+  user: Omit<User, 'id' | 'createdAt' | 'updatedAt'>
+): User {
   const newUser: User = {
     id: nextId++,
     ...user,

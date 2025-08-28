@@ -1,6 +1,6 @@
 /**
  * Order data model for Service A
- * 
+ *
  * Defines the structure and interfaces for order data
  */
 

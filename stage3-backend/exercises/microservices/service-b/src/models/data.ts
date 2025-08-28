@@ -1,6 +1,6 @@
 /**
  * Customer and Product data models for Service B
- * 
+ *
  * Defines the structure and interfaces for customer and product data
  */
 

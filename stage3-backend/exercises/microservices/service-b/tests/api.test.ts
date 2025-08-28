@@ -1,6 +1,6 @@
 /**
  * API tests for Service B
- * 
+ *
  * Tests for customer and product API endpoints
  */
 
@@ -11,10 +11,8 @@ describe('Customer & Product Service API', () => {
   // Customer tests
   describe('GET /api/v1/customers', () => {
     it('should return all customers', async () => {
-      const response = await request(app)
-        .get('/api/v1/customers')
-        .expect(200);
-      
+      const response = await request(app).get('/api/v1/customers').expect(200);
+
       expect(Array.isArray(response.body)).toBe(true);
       expect(response.body.length).toBeGreaterThan(0);
     });
@@ -25,16 +23,14 @@ describe('Customer & Product Service API', () => {
       const response = await request(app)
         .get('/api/v1/customers/1')
         .expect(200);
-      
+
       expect(response.body).toHaveProperty('id', 1);
       expect(response.body).toHaveProperty('name');
       expect(response.body).toHaveProperty('email');
     });
 
     it('should return 404 for non-existent customer', async () => {
-      await request(app)
-        .get('/api/v1/customers/999')
-        .expect(404);
+      await request(app).get('/api/v1/customers/999').expect(404);
     });
   });
 
@@ -43,14 +39,14 @@ describe('Customer & Product Service API', () => {
       const newCustomer = {
         name: 'Test Customer',
         email: 'test@example.com',
-        address: '123 Test St, Test City, TS'
+        address: '123 Test St, Test City, TS',
       };
 
       const response = await request(app)
         .post('/api/v1/customers')
         .send(newCustomer)
         .expect(201);
-      
+
       expect(response.body).toHaveProperty('id');
       expect(response.body).toHaveProperty('name', newCustomer.name);
       expect(response.body).toHaveProperty('email', newCustomer.email);
@@ -61,7 +57,7 @@ describe('Customer & Product Service API', () => {
 
     it('should return 400 for missing required fields', async () => {
       const incompleteCustomer = {
-        name: 'Test Customer'
+        name: 'Test Customer',
         // Missing email and address
       };
 
@@ -78,7 +74,7 @@ describe('Customer & Product Service API', () => {
         .post('/api/v1/customers/validate')
         .send({ id: 1 })
         .expect(200);
-      
+
       expect(response.body).toHaveProperty('valid', true);
     });
 
@@ -87,7 +83,7 @@ describe('Customer & Product Service API', () => {
         .post('/api/v1/customers/validate')
         .send({ id: 999 })
         .expect(200);
-      
+
       expect(response.body).toHaveProperty('valid', false);
     });
 
@@ -102,10 +98,8 @@ describe('Customer & Product Service API', () => {
   // Product tests
   describe('GET /api/v1/products', () => {
     it('should return all products', async () => {
-      const response = await request(app)
-        .get('/api/v1/products')
-        .expect(200);
-      
+      const response = await request(app).get('/api/v1/products').expect(200);
+
       expect(Array.isArray(response.body)).toBe(true);
       expect(response.body.length).toBeGreaterThan(0);
     });
@@ -113,10 +107,8 @@ describe('Customer & Product Service API', () => {
 
   describe('GET /api/v1/products/:id', () => {
     it('should return a product by ID', async () => {
-      const response = await request(app)
-        .get('/api/v1/products/1')
-        .expect(200);
-      
+      const response = await request(app).get('/api/v1/products/1').expect(200);
+
       expect(response.body).toHaveProperty('id', 1);
       expect(response.body).toHaveProperty('name');
       expect(response.body).toHaveProperty('description');
@@ -125,9 +117,7 @@ describe('Customer & Product Service API', () => {
     });
 
     it('should return 404 for non-existent product', async () => {
-      await request(app)
-        .get('/api/v1/products/999')
-        .expect(404);
+      await request(app).get('/api/v1/products/999').expect(404);
     });
   });
 
@@ -137,17 +127,20 @@ describe('Customer & Product Service API', () => {
         name: 'Test Product',
         description: 'Test product description',
         price: 19.99,
-        inventory: 100
+        inventory: 100,
       };
 
       const response = await request(app)
         .post('/api/v1/products')
         .send(newProduct)
         .expect(201);
-      
+
       expect(response.body).toHaveProperty('id');
       expect(response.body).toHaveProperty('name', newProduct.name);
-      expect(response.body).toHaveProperty('description', newProduct.description);
+      expect(response.body).toHaveProperty(
+        'description',
+        newProduct.description
+      );
       expect(response.body).toHaveProperty('price', newProduct.price);
       expect(response.body).toHaveProperty('inventory', newProduct.inventory);
       expect(response.body).toHaveProperty('createdAt');
@@ -156,7 +149,7 @@ describe('Customer & Product Service API', () => {
 
     it('should return 400 for missing required fields', async () => {
       const incompleteProduct = {
-        name: 'Test Product'
+        name: 'Test Product',
         // Missing description, price, and inventory
       };
 
@@ -173,7 +166,7 @@ describe('Customer & Product Service API', () => {
         .post('/api/v1/products/check-availability')
         .send({ id: 1, quantity: 1 })
         .expect(200);
-      
+
       expect(response.body).toHaveProperty('available', true);
     });
 
@@ -182,7 +175,7 @@ describe('Customer & Product Service API', () => {
         .post('/api/v1/products/check-availability')
         .send({ id: 1, quantity: 1000 })
         .expect(200);
-      
+
       expect(response.body).toHaveProperty('available', false);
     });
 
@@ -200,7 +193,7 @@ describe('Customer & Product Service API', () => {
         .post('/api/v1/products/1/update-inventory')
         .send({ quantity: 1 })
         .expect(200);
-      
+
       expect(response.body).toHaveProperty('success', true);
     });
 

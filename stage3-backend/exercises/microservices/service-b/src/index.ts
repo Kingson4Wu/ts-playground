@@ -2,7 +2,7 @@
 
 /**
  * Customer & Product Service (Service B)
- * 
+ *
  * Main application entry point for Service B
  */
 
@@ -33,7 +33,10 @@ app.use((_req: Request, res: Response) => {
 // Global error handler
 app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   console.error('Global error:', err);
-  res.status(500).json({ error: 'Internal server error', message: 'An unexpected error occurred' });
+  res.status(500).json({
+    error: 'Internal server error',
+    message: 'An unexpected error occurred',
+  });
 });
 
 // Only start server if not in test mode

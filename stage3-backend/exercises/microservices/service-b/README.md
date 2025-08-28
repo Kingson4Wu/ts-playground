@@ -15,35 +15,38 @@ Part of a simulated microservices architecture.
 ## API Endpoints
 
 ### Base URL
+
 `/api/v1`
 
 ### Customer Endpoints
 
-| Method | Endpoint                     | Description                   |
-|--------|------------------------------|-------------------------------|
-| GET    | `/customers`                 | Get all customers             |
-| GET    | `/customers/:id`             | Get customer by ID           |
-| POST   | `/customers`                 | Create a new customer         |
-| POST   | `/customers/validate`        | Validate customer exists      |
+| Method | Endpoint              | Description              |
+| ------ | --------------------- | ------------------------ |
+| GET    | `/customers`          | Get all customers        |
+| GET    | `/customers/:id`      | Get customer by ID       |
+| POST   | `/customers`          | Create a new customer    |
+| POST   | `/customers/validate` | Validate customer exists |
 
 ### Product Endpoints
 
-| Method | Endpoint                           | Description                     |
-|--------|------------------------------------|---------------------------------|
-| GET    | `/products`                        | Get all products                |
-| GET    | `/products/:id`                    | Get product by ID               |
-| POST   | `/products`                        | Create a new product            |
-| POST   | `/products/check-availability`     | Check product availability      |
-| POST   | `/products/:id/update-inventory`  | Update product inventory        |
+| Method | Endpoint                         | Description                |
+| ------ | -------------------------------- | -------------------------- |
+| GET    | `/products`                      | Get all products           |
+| GET    | `/products/:id`                  | Get product by ID          |
+| POST   | `/products`                      | Create a new product       |
+| POST   | `/products/check-availability`   | Check product availability |
+| POST   | `/products/:id/update-inventory` | Update product inventory   |
 
 ## Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/Kingson4Wu/ts-playground.git
    ```
 
 2. Navigate to the service directory:
+
    ```bash
    cd ts-playground/stage3-backend/exercises/microservices/service-b
    ```
@@ -56,11 +59,13 @@ Part of a simulated microservices architecture.
 ## Running the Service
 
 ### Development Mode
+
 ```bash
 npm run dev
 ```
 
 ### Production Mode
+
 ```bash
 npm run build
 npm start
@@ -71,11 +76,13 @@ The service will be available at `http://localhost:3002` by default.
 ## API Documentation
 
 ### Get All Customers
+
 ```
 GET /api/v1/customers
 ```
 
 **Response:**
+
 ```json
 [
   {
@@ -90,11 +97,13 @@ GET /api/v1/customers
 ```
 
 ### Get Customer by ID
+
 ```
 GET /api/v1/customers/:id
 ```
 
 **Response:**
+
 ```json
 {
   "id": 1,
@@ -107,11 +116,13 @@ GET /api/v1/customers/:id
 ```
 
 ### Create Customer
+
 ```
 POST /api/v1/customers
 ```
 
 **Request Body:**
+
 ```json
 {
   "name": "Jane Smith",
@@ -121,6 +132,7 @@ POST /api/v1/customers
 ```
 
 **Response:**
+
 ```json
 {
   "id": 2,
@@ -133,11 +145,13 @@ POST /api/v1/customers
 ```
 
 ### Validate Customer
+
 ```
 POST /api/v1/customers/validate
 ```
 
 **Request Body:**
+
 ```json
 {
   "id": 1
@@ -145,6 +159,7 @@ POST /api/v1/customers/validate
 ```
 
 **Response:**
+
 ```json
 {
   "valid": true
@@ -152,11 +167,13 @@ POST /api/v1/customers/validate
 ```
 
 ### Get All Products
+
 ```
 GET /api/v1/products
 ```
 
 **Response:**
+
 ```json
 [
   {
@@ -172,11 +189,13 @@ GET /api/v1/products
 ```
 
 ### Get Product by ID
+
 ```
 GET /api/v1/products/:id
 ```
 
 **Response:**
+
 ```json
 {
   "id": 1,
@@ -190,11 +209,13 @@ GET /api/v1/products/:id
 ```
 
 ### Create Product
+
 ```
 POST /api/v1/products
 ```
 
 **Request Body:**
+
 ```json
 {
   "name": "Mouse",
@@ -205,6 +226,7 @@ POST /api/v1/products
 ```
 
 **Response:**
+
 ```json
 {
   "id": 2,
@@ -218,11 +240,13 @@ POST /api/v1/products
 ```
 
 ### Check Product Availability
+
 ```
 POST /api/v1/products/check-availability
 ```
 
 **Request Body:**
+
 ```json
 {
   "id": 1,
@@ -231,6 +255,7 @@ POST /api/v1/products/check-availability
 ```
 
 **Response:**
+
 ```json
 {
   "available": true
@@ -238,11 +263,13 @@ POST /api/v1/products/check-availability
 ```
 
 ### Update Product Inventory
+
 ```
 POST /api/v1/products/:id/update-inventory
 ```
 
 **Request Body:**
+
 ```json
 {
   "quantity": 2
@@ -250,6 +277,7 @@ POST /api/v1/products/:id/update-inventory
 ```
 
 **Response:**
+
 ```json
 {
   "success": true
@@ -270,7 +298,7 @@ All error responses follow the same format:
 ### Common HTTP Status Codes
 
 | Status Code | Description           |
-|-------------|-----------------------|
+| ----------- | --------------------- |
 | 200         | OK                    |
 | 201         | Created               |
 | 400         | Bad Request           |
@@ -280,6 +308,7 @@ All error responses follow the same format:
 ## Testing
 
 Run the test suite:
+
 ```bash
 npm test
 ```
@@ -287,6 +316,7 @@ npm test
 ## Implementation Details
 
 This service demonstrates:
+
 - Microservices architecture concepts
 - RESTful API design principles
 - Data modeling with TypeScript interfaces

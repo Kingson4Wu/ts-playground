@@ -10,7 +10,11 @@ import express, { Application, Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import todoRoutes from './routes/todos.js';
 import { sequelize } from './utils/database.js';
-import { TodoNotFoundError, UserNotFoundError, ValidationError } from './services/todoService.js';
+import {
+  TodoNotFoundError,
+  UserNotFoundError,
+  ValidationError,
+} from './services/todoService.js';
 import { getTodosByUserService } from './services/todoService.js';
 
 const app: Application = express();
@@ -24,51 +28,54 @@ app.use(express.json());
 app.use('/api/v1/todos', todoRoutes);
 
 // User routes
-app.get('/api/v1/users/:userId(\\d+)/todos', async (req: Request, res: Response, next: NextFunction) => {
-  try {
-    const userId = parseInt(req.params.userId, 10);
-    const { completed, limit, offset, sortBy, sortOrder } = req.query;
+app.get(
+  '/api/v1/users/:userId(\\d+)/todos',
+  async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const userId = parseInt(req.params.userId, 10);
+      const { completed, limit, offset, sortBy, sortOrder } = req.query;
 
-    const options: Record<string, any> = {};
+      const options: Record<string, any> = {};
 
-    if (completed !== undefined) {
-      options.completed = completed === 'true';
-    }
-
-    if (limit !== undefined) {
-      const limitNum = parseInt(limit as string, 10);
-      if (!isNaN(limitNum) && limitNum > 0) {
-        options.limit = limitNum;
+      if (completed !== undefined) {
+        options.completed = completed === 'true';
       }
-    }
 
-    if (offset !== undefined) {
-      const offsetNum = parseInt(offset as string, 10);
-      if (!isNaN(offsetNum) && offsetNum >= 0) {
-        options.offset = offsetNum;
+      if (limit !== undefined) {
+        const limitNum = parseInt(limit as string, 10);
+        if (!isNaN(limitNum) && limitNum > 0) {
+          options.limit = limitNum;
+        }
       }
-    }
 
-    if (
-      sortBy !== undefined &&
-      (sortBy === 'createdAt' || sortBy === 'updatedAt' || sortBy === 'title')
-    ) {
-      options.sortBy = sortBy;
-    }
+      if (offset !== undefined) {
+        const offsetNum = parseInt(offset as string, 10);
+        if (!isNaN(offsetNum) && offsetNum >= 0) {
+          options.offset = offsetNum;
+        }
+      }
 
-    if (
-      sortOrder !== undefined &&
-      (sortOrder === 'ASC' || sortOrder === 'DESC')
-    ) {
-      options.sortOrder = sortOrder;
-    }
+      if (
+        sortBy !== undefined &&
+        (sortBy === 'createdAt' || sortBy === 'updatedAt' || sortBy === 'title')
+      ) {
+        options.sortBy = sortBy;
+      }
 
-    const result = await getTodosByUserService(userId, options);
-    res.status(200).json(result);
-  } catch (err) {
-    next(err);
+      if (
+        sortOrder !== undefined &&
+        (sortOrder === 'ASC' || sortOrder === 'DESC')
+      ) {
+        options.sortOrder = sortOrder;
+      }
+
+      const result = await getTodosByUserService(userId, options);
+      res.status(200).json(result);
+    } catch (err) {
+      next(err);
+    }
   }
-});
+);
 
 // Error handling middleware for user routes
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
@@ -80,12 +87,10 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     res.status(400).json({ error: 'Validation error', message: err.message });
   } else {
     console.error('Unexpected error:', err);
-    res
-      .status(500)
-      .json({
-        error: 'Internal server error',
-        message: 'An unexpected error occurred',
-      });
+    res.status(500).json({
+      error: 'Internal server error',
+      message: 'An unexpected error occurred',
+    });
   }
 });
 
@@ -102,12 +107,10 @@ app.use((_req: Request, res: Response) => {
 // Global error handler
 app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   console.error('Global error:', err);
-  res
-    .status(500)
-    .json({
-      error: 'Internal server error',
-      message: 'An unexpected error occurred',
-    });
+  res.status(500).json({
+    error: 'Internal server error',
+    message: 'An unexpected error occurred',
+  });
 });
 
 // Initialize database and start server

@@ -345,7 +345,7 @@ describe('Todo API', () => {
       expect(response.status).toBe(200);
       expect(response.body.todos).toHaveLength(2);
       expect(response.body.totalCount).toBe(2);
-      
+
       // Check that both todos are returned, regardless of order
       const titles = response.body.todos.map((todo: any) => todo.title);
       expect(titles).toContain('User1 Todo 1');

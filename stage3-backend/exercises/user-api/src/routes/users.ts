@@ -63,12 +63,10 @@ function errorHandler(
     res.status(400).json({ error: 'Validation error', message: err.message });
   } else {
     console.error('Unexpected error:', err);
-    res
-      .status(500)
-      .json({
-        error: 'Internal server error',
-        message: 'An unexpected error occurred',
-      });
+    res.status(500).json({
+      error: 'Internal server error',
+      message: 'An unexpected error occurred',
+    });
   }
 }
 

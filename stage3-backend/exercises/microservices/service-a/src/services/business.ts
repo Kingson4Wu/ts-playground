@@ -1,6 +1,6 @@
 /**
  * Business logic for Service A
- * 
+ *
  * Implements business logic for order operations and service-to-service communication
  */
 
@@ -24,17 +24,21 @@ const apiClient: AxiosInstance = axios.create({
 
 /**
  * Creates a new order
- * 
+ *
  * @param orderData - Order data to create
  * @returns Created order
  * @throws {Error} If customer validation or product availability check fails
  */
-export async function createOrder(orderData: Omit<Order, 'id' | 'status' | 'createdAt' | 'updatedAt'>): Promise<Order> {
+export async function createOrder(
+  orderData: Omit<Order, 'id' | 'status' | 'createdAt' | 'updatedAt'>
+): Promise<Order> {
   const { customerId, productId, quantity } = orderData;
-  
+
   // Validate customer with Service B
   try {
-    const customerResponse = await apiClient.post('/customers/validate', { id: customerId });
+    const customerResponse = await apiClient.post('/customers/validate', {
+      id: customerId,
+    });
     if (!customerResponse.data.valid) {
       throw new Error(`Customer with ID ${customerId} not found`);
     }
@@ -44,15 +48,20 @@ export async function createOrder(orderData: Omit<Order, 'id' | 'status' | 'crea
     }
     throw error;
   }
-  
+
   // Check product availability with Service B
   try {
-    const availabilityResponse = await apiClient.post('/products/check-availability', { 
-      id: productId, 
-      quantity 
-    });
+    const availabilityResponse = await apiClient.post(
+      '/products/check-availability',
+      {
+        id: productId,
+        quantity,
+      }
+    );
     if (!availabilityResponse.data.available) {
-      throw new Error(`Product with ID ${productId} is not available in quantity ${quantity}`);
+      throw new Error(
+        `Product with ID ${productId} is not available in quantity ${quantity}`
+      );
     }
   } catch (error) {
     if (axios.isAxiosError(error)) {
@@ -60,7 +69,7 @@ export async function createOrder(orderData: Omit<Order, 'id' | 'status' | 'crea
     }
     throw error;
   }
-  
+
   // Create order
   const newOrder: Order = {
     id: nextOrderId++,
@@ -69,16 +78,16 @@ export async function createOrder(orderData: Omit<Order, 'id' | 'status' | 'crea
     quantity,
     status: 'pending',
     createdAt: new Date(),
-    updatedAt: new Date()
+    updatedAt: new Date(),
   };
-  
+
   orders.push(newOrder);
   return newOrder;
 }
 
 /**
  * Retrieves an order by ID
- * 
+ *
  * @param id - Order ID to retrieve
  * @returns Order if found
  * @throws {Error} If order is not found
@@ -93,7 +102,7 @@ export function getOrderById(id: number): Order {
 
 /**
  * Updates order status
- * 
+ *
  * @param id - Order ID to update
  * @param status - New status
  * @returns Updated order
@@ -104,7 +113,7 @@ export function updateOrderStatus(id: number, status: OrderStatus): Order {
   if (orderIndex === -1) {
     throw new Error(`Order with ID ${id} not found`);
   }
-  
+
   orders[orderIndex].status = status;
   orders[orderIndex].updatedAt = new Date();
   return orders[orderIndex];
@@ -112,7 +121,7 @@ export function updateOrderStatus(id: number, status: OrderStatus): Order {
 
 /**
  * Retrieves all orders
- * 
+ *
  * @returns Array of all orders
  */
 export function getAllOrders(): Order[] {
@@ -121,7 +130,7 @@ export function getAllOrders(): Order[] {
 
 /**
  * Updates product inventory after order is processed
- * 
+ *
  * @param orderId - Order ID to process
  * @returns True if inventory was updated, false otherwise
  */
@@ -130,13 +139,16 @@ export async function processOrder(orderId: number): Promise<boolean> {
   if (!order) {
     return false;
   }
-  
+
   try {
     // Update product inventory in Service B
-    const response = await apiClient.post(`/products/${order.productId}/update-inventory`, {
-      quantity: order.quantity
-    });
-    
+    const response = await apiClient.post(
+      `/products/${order.productId}/update-inventory`,
+      {
+        quantity: order.quantity,
+      }
+    );
+
     if (response.data.success) {
       // Update order status to processing
       updateOrderStatus(orderId, 'processing');
@@ -153,7 +165,7 @@ export async function processOrder(orderId: number): Promise<boolean> {
 
 /**
  * Cancels an order
- * 
+ *
  * @param id - Order ID to cancel
  * @returns True if order was cancelled, false otherwise
  */
@@ -162,14 +174,14 @@ export async function cancelOrder(id: number): Promise<boolean> {
   if (orderIndex === -1) {
     return false;
   }
-  
+
   // If order was already processed, we might need to restock the product
   const order = orders[orderIndex];
   if (order.status === 'processing' || order.status === 'shipped') {
     try {
       // Restock the product in Service B
       await apiClient.post(`/products/${order.productId}/update-inventory`, {
-        quantity: -order.quantity // Negative quantity to add back to inventory
+        quantity: -order.quantity, // Negative quantity to add back to inventory
       });
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -178,7 +190,7 @@ export async function cancelOrder(id: number): Promise<boolean> {
       // Even if restocking fails, we still cancel the order
     }
   }
-  
+
   // Remove order from storage
   orders.splice(orderIndex, 1);
   return true;
