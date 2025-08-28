@@ -18,15 +18,12 @@ let nextId = 1;
  * @param user - User data to create
  * @returns Created user
  */
-export function createUser(
-  user: Omit<User, 'id' | 'createdAt' | 'updatedAt'>
-): User {
-  const now = new Date();
+export function createUser(user: Omit<User, 'id' | 'createdAt' | 'updatedAt'>): User {
   const newUser: User = {
     id: nextId++,
     ...user,
-    createdAt: now,
-    updatedAt: now,
+    createdAt: new Date(),
+    updatedAt: new Date(),
   };
   users.push(newUser);
   return newUser;
@@ -45,7 +42,7 @@ export function findUserById(id: number): User | undefined {
 /**
  * Finds a user by email
  *
- * @param email - User email to find
+ * @param email - Email to find
  * @returns User if found, undefined otherwise
  */
 export function findUserByEmail(email: string): User | undefined {
@@ -53,19 +50,19 @@ export function findUserByEmail(email: string): User | undefined {
 }
 
 /**
- * Gets all users
+ * Finds all users
  *
  * @returns Array of all users
  */
 export function findAllUsers(): User[] {
-  return [...users]; // Return a copy to prevent direct modification
+  return [...users];
 }
 
 /**
  * Updates a user
  *
  * @param id - User ID to update
- * @param updates - User data updates
+ * @param updates - Updates to apply
  * @returns Updated user if found, undefined otherwise
  */
 export function updateUser(
@@ -77,33 +74,47 @@ export function updateUser(
     return undefined;
   }
 
-  const now = new Date();
-  users[userIndex] = {
+  const updatedUser = {
     ...users[userIndex],
     ...updates,
-    updatedAt: now,
+    updatedAt: new Date(),
   };
 
-  return users[userIndex];
+  users[userIndex] = updatedUser;
+  return updatedUser;
 }
 
 /**
- * Deletes a user by ID
+ * Deletes a user
  *
  * @param id - User ID to delete
  * @returns True if user was deleted, false otherwise
  */
 export function deleteUser(id: number): boolean {
-  const initialLength = users.length;
-  users = users.filter(user => user.id !== id);
-  return users.length < initialLength;
+  const userIndex = users.findIndex(user => user.id === id);
+  if (userIndex === -1) {
+    return false;
+  }
+
+  users.splice(userIndex, 1);
+  return true;
 }
 
 /**
- * Gets the total number of users
+ * Gets the number of users
  *
- * @returns Total number of users
+ * @returns Number of users
  */
 export function getUserCount(): number {
   return users.length;
+}
+
+/**
+ * Clears all users from the database
+ *
+ * Used for testing purposes
+ */
+export function clearUsers(): void {
+  users = [];
+  nextId = 1;
 }

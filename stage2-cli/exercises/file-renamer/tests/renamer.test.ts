@@ -2,19 +2,17 @@
  * Unit tests for the file renamer module
  */
 
-import { renameFiles } from '../src/renamer';
-
 // Mock file system functions
 const mockReaddir = jest.fn();
 const mockRename = jest.fn();
 
 // Mock the fs/promises module
-jest.mock('fs/promises', () => {
-  return {
-    readdir: mockReaddir,
-    rename: mockRename,
-  };
-});
+jest.mock('fs/promises', () => ({
+  readdir: mockReaddir,
+  rename: mockRename,
+}));
+
+import { renameFiles } from '../src/renamer';
 
 describe('File Renamer', () => {
   beforeEach(() => {

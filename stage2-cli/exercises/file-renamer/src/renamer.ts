@@ -168,6 +168,15 @@ export async function renameFiles(
         stats.renamed++;
       }
     } catch (error) {
+      // Re-throw validation errors
+      if (error instanceof Error && (
+        error.message.includes('required') || 
+        error.message.includes('Unsupported operation')
+      )) {
+        throw error;
+      }
+      
+      // Count other errors
       stats.errors++;
       // Continue with other files even if one fails
     }
@@ -183,8 +192,10 @@ export async function renameFiles(
  * @returns Title case string
  */
 function toTitleCase(str: string): string {
-  return str.replace(
-    /\w\S*/g,
-    txt => txt.charAt(0).toUpperCase() + txt.substring(1).toLowerCase()
-  );
+  // Split by underscores and dots to handle file names properly
+  const parts = str.split(/([_.])/);
+  return parts.map(part => {
+    if (part === '_' || part === '.') return part;
+    return part.charAt(0).toUpperCase() + part.substring(1).toLowerCase();
+  }).join('');
 }

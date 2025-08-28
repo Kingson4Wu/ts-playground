@@ -41,26 +41,38 @@ app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
     });
 });
 
-// Start server
-const server = app.listen(PORT, () => {
-  console.log(`User Management API is running on port ${PORT}`);
-});
+let server: ReturnType<typeof app.listen> | null = null;
+
+// Only start server if not in test mode
+if (process.env.NODE_ENV !== 'test') {
+  server = app.listen(PORT, () => {
+    console.log(`User Management API is running on port ${PORT}`);
+  });
+}
 
 // Graceful shutdown
 process.on('SIGINT', () => {
   console.log('Shutting down server...');
-  server.close(() => {
-    console.log('Server closed');
+  if (server) {
+    server.close(() => {
+      console.log('Server closed');
+      process.exit(0);
+    });
+  } else {
     process.exit(0);
-  });
+  }
 });
 
 process.on('SIGTERM', () => {
   console.log('Shutting down server...');
-  server.close(() => {
-    console.log('Server closed');
+  if (server) {
+    server.close(() => {
+      console.log('Server closed');
+      process.exit(0);
+    });
+  } else {
     process.exit(0);
-  });
+  }
 });
 
 export default app;

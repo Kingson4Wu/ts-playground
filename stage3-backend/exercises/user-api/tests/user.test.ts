@@ -4,12 +4,12 @@
 
 import request from 'supertest';
 import app from '../src/index';
+import { clearUsers } from '../src/utils/database';
 
 describe('User API', () => {
   // Clear the database before each test
   beforeEach(() => {
-    // We would normally clear the database here, but since we're using in-memory storage
-    // and the tests run in isolation, we don't need to do anything
+    clearUsers();
   });
 
   describe('GET /', () => {

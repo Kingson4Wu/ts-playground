@@ -194,58 +194,8 @@ router.patch(
   }
 );
 
-/**
- * GET /api/v1/users/:userId/todos
- * Get todos for a specific user
- */
-router.get(
-  '/users/:userId(\\d+)/todos',
-  async (req: Request, res: Response, next: NextFunction) => {
-    try {
-      const userId = parseInt(req.params.userId, 10);
-      const { completed, limit, offset, sortBy, sortOrder } = req.query;
-
-      const options: Record<string, any> = {};
-
-      if (completed !== undefined) {
-        options.completed = completed === 'true';
-      }
-
-      if (limit !== undefined) {
-        const limitNum = parseInt(limit as string, 10);
-        if (!isNaN(limitNum) && limitNum > 0) {
-          options.limit = limitNum;
-        }
-      }
-
-      if (offset !== undefined) {
-        const offsetNum = parseInt(offset as string, 10);
-        if (!isNaN(offsetNum) && offsetNum >= 0) {
-          options.offset = offsetNum;
-        }
-      }
-
-      if (
-        sortBy !== undefined &&
-        (sortBy === 'createdAt' || sortBy === 'updatedAt' || sortBy === 'title')
-      ) {
-        options.sortBy = sortBy;
-      }
-
-      if (
-        sortOrder !== undefined &&
-        (sortOrder === 'ASC' || sortOrder === 'DESC')
-      ) {
-        options.sortOrder = sortOrder;
-      }
-
-      const result = await getTodosByUserService(userId, options);
-      res.status(200).json(result);
-    } catch (err) {
-      next(err);
-    }
-  }
-);
+// Export the getTodosByUserService function for use in the main router
+export { getTodosByUserService };
 
 // Register error handling middleware
 router.use(errorHandler);
