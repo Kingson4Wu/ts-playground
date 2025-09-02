@@ -21,11 +21,22 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "stage1-foundations/**/*",
-    "stage2-cli/**/*",
-    "stage3-backend/**/*",
-    "stage4-production/**/*",
-    "tests/**/*"
+    "stage1-foundations/practice/**/*",
+    "stage1-foundations/tests/**/*",
+    "stage2-cli/practice/**/*",
+    "stage2-cli/tests/**/*",
+    "stage3-backend/practice/**/*",
+    "stage3-backend/tests/**/*",
+    "stage4-production/practice/**/*",
+    "stage4-production/tests/**/*"
   ],
-  "exclude": ["node_modules", "dist"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "stage1-foundations/exercises",
+    "stage2-cli/exercises",
+    "stage3-backend/exercises",
+    "stage4-production/exercises",
+    "stage4-production/practice/playground.ts"
+  ]
 }

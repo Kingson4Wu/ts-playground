@@ -1,10 +1,13 @@
 # Implementation Plan: Simple CLI Calculator
 
 ## Task Overview
+
 Create a simple command-line calculator that performs basic arithmetic operations (addition, subtraction, multiplication, division) on two numbers.
 
 ## Requirements Analysis
+
 Based on Stage 1 learning objectives, this exercise should demonstrate:
+
 - Basic TypeScript syntax and type system
 - Function parameter and return types
 - Union types for operation selection
@@ -15,6 +18,7 @@ Based on Stage 1 learning objectives, this exercise should demonstrate:
 ## Implementation Approach
 
 ### 1. Project Structure
+
 ```
 stage1-foundations/exercises/calculator/
 ├── index.ts          # Entry point for CLI
@@ -26,6 +30,7 @@ stage1-foundations/exercises/calculator/
 ### 2. Core Components
 
 #### calculator.ts
+
 - Define operation types using union types: `'add' | 'subtract' | 'multiply' | 'divide'`
 - Implement a calculate function with proper type annotations:
   - Parameters: two numbers and an operation string
@@ -34,6 +39,7 @@ stage1-foundations/exercises/calculator/
 - Export the function using named exports
 
 #### index.ts
+
 - Parse command-line arguments using `process.argv`
 - Validate input arguments with type checking
 - Convert string arguments to numbers with error handling
@@ -42,6 +48,7 @@ stage1-foundations/exercises/calculator/
 - Output results to console
 
 ### 3. Technical Requirements
+
 - Use strict TypeScript mode with all strict options enabled
 - Implement proper error handling with TypeScript's type system
 - Follow naming conventions (kebab-case for files, camelCase for variables)
@@ -49,6 +56,7 @@ stage1-foundations/exercises/calculator/
 - Use ES Module syntax for imports/exports
 
 ### 4. Testing Plan
+
 - Unit tests for the calculate function with all operations
 - Test cases for error conditions (division by zero)
 - Test cases for edge cases (negative numbers, decimals)
@@ -56,6 +64,7 @@ stage1-foundations/exercises/calculator/
 - Follow AAA pattern (Arrange, Act, Assert) for tests
 
 ### 5. Quality Assurance
+
 - All code must pass ESLint and Prettier checks
 - All tests must pass with 100% success rate
 - README.md must include:
@@ -65,11 +74,13 @@ stage1-foundations/exercises/calculator/
   - Example usage
 
 ### 6. Dependencies
+
 - No external dependencies required
 - Use built-in Node.js modules only
 - Jest for testing framework
 
 ## Implementation Steps
+
 1. Create project structure directories
 2. Implement the core calculator logic in calculator.ts
 3. Create unit tests for calculator.ts
@@ -80,6 +91,7 @@ stage1-foundations/exercises/calculator/
 8. Validate ESLint and Prettier compliance
 
 ## Success Criteria
+
 - Calculator correctly performs all four basic arithmetic operations
 - Proper error handling for invalid inputs and division by zero
 - All unit tests pass with 100% success rate

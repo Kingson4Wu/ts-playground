@@ -27,10 +27,10 @@ class Application {
   }
 }
 
-// Default configuration
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const defaultConfig: Config = {
-  port: 3000,
-  databaseUrl: 'sqlite://localhost:database.db',
-  logLevel: 'info',
-};
+// Example usage (commented out)
+// const app = new Application({
+//   port: 3000,
+//   databaseUrl: 'sqlite://localhost:database.db',
+//   logLevel: 'info',
+// });
+// app.start();

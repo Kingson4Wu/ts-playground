@@ -29,11 +29,11 @@ class UserModel
   extends Model<UserAttributes, UserCreationAttributes>
   implements UserAttributes
 {
-  public id!: number;
-  public name!: string;
-  public email!: string;
-  public readonly createdAt!: Date;
-  public readonly updatedAt!: Date;
+  declare id: number;
+  declare name: string;
+  declare email: string;
+  declare readonly createdAt: Date;
+  declare readonly updatedAt: Date;
 }
 
 UserModel.init(
@@ -91,13 +91,13 @@ class TodoModel
   extends Model<TodoAttributes, TodoCreationAttributes>
   implements TodoAttributes
 {
-  public id!: number;
-  public title!: string;
-  public description?: string;
-  public completed!: boolean;
-  public userId!: number;
-  public readonly createdAt!: Date;
-  public readonly updatedAt!: Date;
+  declare id: number;
+  declare title: string;
+  declare description?: string;
+  declare completed: boolean;
+  declare userId: number;
+  declare readonly createdAt: Date;
+  declare readonly updatedAt: Date;
 }
 
 TodoModel.init(

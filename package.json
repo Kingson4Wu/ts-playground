@@ -6,7 +6,11 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsx watch",
-    "test": "jest",
+    "test": "echo 'Running all tests...' && npm run test:stage1 && npm run test:stage2 && npm run test:stage3 && npm run test:stage4 && echo 'All tests completed successfully!'",
+    "test:stage1": "cd stage1-foundations && npm test",
+    "test:stage2": "cd stage2-cli && npm test",
+    "test:stage3": "cd stage3-backend/exercises/user-api && npm test && cd ../todo-service && npm test && cd ../microservices/service-a && npm test && cd ../microservices/service-b && npm test",
+    "test:stage4": "cd stage4-production && npm test",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "format": "prettier --write .",

@@ -2,10 +2,7 @@
  * Unit tests for the password generator module
  */
 
-import {
-  generatePassword,
-  PasswordOptions,
-} from '../exercises/password-generator/src/password-generator.js';
+import { generatePassword } from '../../password-generator/src/password-generator.ts';
 
 describe('Password Generator', () => {
   describe('default options', () => {

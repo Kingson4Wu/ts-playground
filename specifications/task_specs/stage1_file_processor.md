@@ -1,10 +1,13 @@
 # Implementation Plan: File Content Processing Script
 
 ## Task Overview
+
 Create a command-line script that processes text files to perform operations like counting words, lines, characters, finding patterns, or transforming text (e.g., converting case, removing whitespace). The script should demonstrate file system operations and text processing in TypeScript.
 
 ## Requirements Analysis
+
 Based on Stage 1 learning objectives, this exercise should demonstrate:
+
 - Asynchronous file system operations using fs/promises
 - Working with Node.js built-in modules (fs, path)
 - String manipulation and regular expressions
@@ -15,6 +18,7 @@ Based on Stage 1 learning objectives, this exercise should demonstrate:
 ## Implementation Approach
 
 ### 1. Project Structure
+
 ```
 stage1-foundations/exercises/file-processor/
 ├── index.ts               # Entry point for CLI
@@ -26,6 +30,7 @@ stage1-foundations/exercises/file-processor/
 ### 2. Core Components
 
 #### file-processor.ts
+
 - Define OperationType union type: `'count-words' | 'count-lines' | 'count-chars' | 'find-pattern' | 'to-upper' | 'to-lower' | 'remove-whitespace'`
 - Define FileProcessorOptions interface with:
   - filePath: string
@@ -36,18 +41,19 @@ stage1-foundations/exercises/file-processor/
   - Return type: Promise<string | number> (depending on operation)
   - Use fs/promises for asynchronous file operations
   - Implement all operations:
-    * count-words: Count words in the file
-    * count-lines: Count lines in the file
-    * count-chars: Count characters in the file
-    * find-pattern: Find occurrences of a pattern (regex) in the file
-    * to-upper: Convert file content to uppercase
-    * to-lower: Convert file content to lowercase
-    * remove-whitespace: Remove extra whitespace from file content
+    - count-words: Count words in the file
+    - count-lines: Count lines in the file
+    - count-chars: Count characters in the file
+    - find-pattern: Find occurrences of a pattern (regex) in the file
+    - to-upper: Convert file content to uppercase
+    - to-lower: Convert file content to lowercase
+    - remove-whitespace: Remove extra whitespace from file content
   - Handle file reading errors appropriately
   - Validate operation parameters (e.g., pattern required for find-pattern)
 - Export the types and function using named exports
 
 #### index.ts
+
 - Parse command-line arguments using `process.argv`
 - Convert arguments to FileProcessorOptions object
 - Validate input arguments with type checking
@@ -57,6 +63,7 @@ stage1-foundations/exercises/file-processor/
 - Output results to console (or write to file for transformation operations)
 
 ### 3. Technical Requirements
+
 - Use strict TypeScript mode with all strict options enabled
 - Implement proper error handling with TypeScript's type system
 - Use Node.js built-in fs/promises module for asynchronous file operations
@@ -65,6 +72,7 @@ stage1-foundations/exercises/file-processor/
 - Use ES Module syntax for imports/exports
 
 ### 4. Testing Plan
+
 - Unit tests for the processFile function with various operations
 - Test cases for all operation types
 - Test cases for error conditions (file not found, invalid operations)
@@ -74,6 +82,7 @@ stage1-foundations/exercises/file-processor/
 - Follow AAA pattern (Arrange, Act, Assert) for tests
 
 ### 5. Quality Assurance
+
 - All code must pass ESLint and Prettier checks
 - All tests must pass with 100% success rate
 - README.md must include:
@@ -84,11 +93,13 @@ stage1-foundations/exercises/file-processor/
   - Example usage
 
 ### 6. Dependencies
+
 - No external dependencies required
 - Use built-in Node.js modules only (fs, path)
 - Jest for testing framework
 
 ## Implementation Steps
+
 1. Create project structure directories
 2. Implement the core file processing logic in file-processor.ts
 3. Create unit tests for file-processor.ts
@@ -99,6 +110,7 @@ stage1-foundations/exercises/file-processor/
 8. Validate ESLint and Prettier compliance
 
 ## Success Criteria
+
 - File processor correctly performs all specified operations
 - Proper error handling for file operations and invalid inputs
 - Asynchronous file operations work correctly

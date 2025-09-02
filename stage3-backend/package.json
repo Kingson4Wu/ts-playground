@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "tsx watch",
     "build": "tsc",
-    "test": "jest",
+    "test": "npm run test:user-api && npm run test:todo-service && npm run test:service-a && npm run test:service-b",
+    "test:user-api": "cd exercises/user-api && npm test",
+    "test:todo-service": "cd exercises/todo-service && npm test",
+    "test:service-a": "cd exercises/microservices/service-a && npm test",
+    "test:service-b": "cd exercises/microservices/service-b && npm test",
     "format:check": "prettier --check .",
     "format": "prettier --write ."
   },

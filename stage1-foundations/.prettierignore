@@ -1,12 +1,43 @@
-# Ignore node_modules
+# Coverage directories
+coverage/
+**/coverage/
+
+# Node modules
 node_modules/
+**/node_modules/
 
-# Ignore build output
+# Distribution directories
 dist/
-build/
+**/dist/
 
-# Ignore log files
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Log files
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Ignore Git version control files
-.git/
+# Lock files
+package-lock.json
+yarn.lock

@@ -1,6 +1,6 @@
 # TypeScript Learning Playground
 
-[![CI/CD Pipeline](https://github.com/your-username/ts-playground/actions/workflows/ci.yml/badge.svg)](https://github.com/your-username/ts-playground/actions/workflows/ci.yml)
+[![CI/CD Pipeline](https://github.com/Kingson4Wu/ts-playground/actions/workflows/ci.yml/badge.svg)](https://github.com/Kingson4Wu/ts-playground/actions/workflows/ci.yml)
 
 This repository serves as a structured learning environment and documentation hub for systematically mastering TypeScript, particularly for developers with a backend background. The goal is to gain proficiency in TypeScript's type system and apply it to building command-line interfaces (CLI) and backend services using Node.js.
 

@@ -1,0 +1,25 @@
+{
+  "name": "file-processor",
+  "version": "1.0.0",
+  "description": "File Content Processing Script exercise",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "test": "jest --config=jest.config.cjs",
+    "test:watch": "jest --config=jest.config.cjs --watch",
+    "test:coverage": "jest --config=jest.config.cjs --coverage"
+  },
+  "keywords": [
+    "typescript",
+    "file",
+    "processing",
+    "cli"
+  ],
+  "author": "Kingson Wu",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.3.0"
+  }
+}

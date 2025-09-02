@@ -1,10 +1,13 @@
 # Implementation Plan: Simulated Microservices Interaction
 
 ## Task Overview
+
 Create two simulated microservices that interact with each other to demonstrate microservices architecture concepts. This exercise should show how to design and implement services that communicate over HTTP, handle distributed data, and manage service boundaries.
 
 ## Requirements Analysis
+
 Based on Stage 3 learning objectives, this exercise should demonstrate:
+
 - Microservices architecture concepts
 - HTTP communication between services
 - API design for service-to-service interaction
@@ -15,6 +18,7 @@ Based on Stage 3 learning objectives, this exercise should demonstrate:
 ## Implementation Approach
 
 ### 1. Project Structure
+
 ```
 stage3-backend/exercises/microservices/
 ├── service-a/
@@ -50,9 +54,11 @@ stage3-backend/exercises/microservices/
 ### 2. Core Components
 
 #### Service A - Order Management Service
+
 Purpose: Manage customer orders
 
 ##### models/data.ts
+
 - Define Order interface with:
   - id: number (auto-generated)
   - customerId: number
@@ -63,6 +69,7 @@ Purpose: Manage customer orders
   - updatedAt: Date
 
 ##### services/business.ts
+
 - Implement business logic for order operations:
   - createOrder: Create a new order
   - getOrderById: Retrieve order by ID
@@ -75,6 +82,7 @@ Purpose: Manage customer orders
 - Export service functions using named exports
 
 ##### routes/api.ts
+
 - Implement Express/Fastify routes for order operations:
   - GET /orders - Get all orders
   - GET /orders/:id - Get order by ID
@@ -87,6 +95,7 @@ Purpose: Manage customer orders
 - Implement error handling for service communication failures
 
 ##### index.ts
+
 - Set up Express/Fastify application for Service A
 - Configure middleware
 - Register order routes
@@ -94,9 +103,11 @@ Purpose: Manage customer orders
 - Implement graceful shutdown
 
 #### Service B - Customer & Product Service
+
 Purpose: Manage customer information and product inventory
 
 ##### models/data.ts
+
 - Define Customer interface with:
   - id: number (auto-generated)
   - name: string
@@ -104,7 +115,6 @@ Purpose: Manage customer information and product inventory
   - address: string
   - createdAt: Date
   - updatedAt: Date
-  
 - Define Product interface with:
   - id: number (auto-generated)
   - name: string
@@ -115,6 +125,7 @@ Purpose: Manage customer information and product inventory
   - updatedAt: Date
 
 ##### services/business.ts
+
 - Implement business logic for customer operations:
   - getCustomerById: Retrieve customer by ID
   - validateCustomer: Validate customer exists
@@ -125,6 +136,7 @@ Purpose: Manage customer information and product inventory
 - Export service functions using named exports
 
 ##### routes/api.ts
+
 - Implement Express/Fastify routes for customer operations:
   - GET /customers/:id - Get customer by ID
   - POST /customers/validate - Validate customer exists
@@ -138,6 +150,7 @@ Purpose: Manage customer information and product inventory
 - Return appropriate HTTP status codes and responses
 
 ##### index.ts
+
 - Set up Express/Fastify application for Service B
 - Configure middleware
 - Register customer and product routes
@@ -145,6 +158,7 @@ Purpose: Manage customer information and product inventory
 - Implement graceful shutdown
 
 ### 3. Technical Requirements
+
 - Use strict TypeScript mode with all strict options enabled
 - Implement proper error handling with TypeScript's type system
 - Use Express or Fastify for API framework
@@ -156,6 +170,7 @@ Purpose: Manage customer information and product inventory
 - Include comprehensive JSDoc comments for exported functions and interfaces
 
 ### 4. Service Interaction Design
+
 - Service A (Order Management) communicates with Service B (Customer & Product) via HTTP
 - Service A calls Service B to:
   - Validate customer information before creating an order
@@ -167,6 +182,7 @@ Purpose: Manage customer information and product inventory
   - Proper error responses to clients
 
 ### 5. Testing Plan
+
 - Integration tests for each service independently
 - Integration tests for service-to-service communication
 - Test cases for all API endpoints in both services
@@ -182,6 +198,7 @@ Purpose: Manage customer information and product inventory
 - Follow AAA pattern (Arrange, Act, Assert) for tests
 
 ### 6. Quality Assurance
+
 - All code must pass ESLint and Prettier checks
 - All tests must pass with 100% success rate
 - README.md files for each service must include:
@@ -194,6 +211,7 @@ Purpose: Manage customer information and product inventory
   - Error handling documentation
 
 ### 7. Dependencies
+
 - Express or Fastify for API framework
 - axios or node-fetch for HTTP communication
 - Jest for testing framework
@@ -202,6 +220,7 @@ Purpose: Manage customer information and product inventory
 - TypeScript compiler
 
 ## Implementation Steps
+
 1. Create project structure directories for both services
 2. Initialize package.json files with required dependencies
 3. Implement data models for both services
@@ -219,6 +238,7 @@ Purpose: Manage customer information and product inventory
 15. Validate ESLint and Prettier compliance
 
 ## Success Criteria
+
 - Both services correctly implement their respective functionalities
 - Services can communicate with each other successfully
 - Proper error handling for service communication failures

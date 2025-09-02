@@ -1,10 +1,13 @@
 # Implementation Plan: To-Do List Service with Database
 
 ## Task Overview
+
 Create a RESTful API for a to-do list service with full CRUD operations and database integration. This service should demonstrate backend development with TypeScript, including proper API design, data validation, database relationships, and querying capabilities.
 
 ## Requirements Analysis
+
 Based on Stage 3 learning objectives, this exercise should demonstrate:
+
 - Building RESTful APIs with Express or Fastify
 - Database integration with ORMs (TypeORM or Prisma)
 - Data modeling with relationships (users and todos)
@@ -16,6 +19,7 @@ Based on Stage 3 learning objectives, this exercise should demonstrate:
 ## Implementation Approach
 
 ### 1. Project Structure
+
 ```
 stage3-backend/exercises/todo-service/
 ├── package.json           # Exercise-specific dependencies
@@ -39,6 +43,7 @@ stage3-backend/exercises/todo-service/
 ### 2. Core Components
 
 #### models/user.ts
+
 - Define User interface with:
   - id: number (auto-generated)
   - name: string
@@ -47,6 +52,7 @@ stage3-backend/exercises/todo-service/
   - updatedAt: Date
 
 #### models/todo.ts
+
 - Define Todo interface with:
   - id: number (auto-generated)
   - title: string
@@ -58,12 +64,14 @@ stage3-backend/exercises/todo-service/
 - Define relationships between User and Todo (one-to-many)
 
 #### utils/database.ts
+
 - Implement database connection with TypeORM or Prisma
 - Use SQLite for development database
 - Implement database initialization and connection
 - Export database connection/utilities
 
 #### services/todoService.ts
+
 - Implement business logic for todo operations:
   - createTodo: Create a new todo item
   - getTodoById: Retrieve todo by ID
@@ -83,6 +91,7 @@ stage3-backend/exercises/todo-service/
 - Export service functions using named exports
 
 #### routes/todos.ts
+
 - Implement Express/Fastify routes for todo operations:
   - GET /todos - Get all todos (with query parameters for filtering, pagination, sorting)
   - GET /todos/:id - Get todo by ID
@@ -98,6 +107,7 @@ stage3-backend/exercises/todo-service/
 - Implement error handling middleware integration
 
 #### index.ts
+
 - Set up Express/Fastify application
 - Configure middleware (body parser, CORS if needed)
 - Register todo routes
@@ -107,6 +117,7 @@ stage3-backend/exercises/todo-service/
 - Handle application errors
 
 ### 3. Technical Requirements
+
 - Use strict TypeScript mode with all strict options enabled
 - Implement proper error handling with TypeScript's type system
 - Use Express or Fastify for API framework
@@ -118,10 +129,11 @@ stage3-backend/exercises/todo-service/
 - Include comprehensive JSDoc comments for exported functions and interfaces
 
 ### 4. API Design
+
 - Base URL: /api/v1
 - Todo endpoints:
   - GET /api/v1/todos - Retrieve all todos
-    * Query parameters: completed, limit, offset, sortBy, sortOrder
+    - Query parameters: completed, limit, offset, sortBy, sortOrder
   - GET /api/v1/todos/:id - Retrieve a specific todo
   - POST /api/v1/todos - Create a new todo
   - PUT /api/v1/todos/:id - Update an existing todo
@@ -132,6 +144,7 @@ stage3-backend/exercises/todo-service/
 - Error responses: Consistent error format with message and code
 
 ### 5. Testing Plan
+
 - Integration tests for all API endpoints
 - Test cases for all CRUD operations
 - Test cases for query parameters (filtering, pagination, sorting)
@@ -143,6 +156,7 @@ stage3-backend/exercises/todo-service/
 - Follow AAA pattern (Arrange, Act, Assert) for tests
 
 ### 6. Quality Assurance
+
 - All code must pass ESLint and Prettier checks
 - All tests must pass with 100% success rate
 - README.md must include:
@@ -155,6 +169,7 @@ stage3-backend/exercises/todo-service/
   - Database schema documentation
 
 ### 7. Dependencies
+
 - Express or Fastify for API framework
 - TypeORM or Prisma for database integration
 - SQLite for development database
@@ -164,6 +179,7 @@ stage3-backend/exercises/todo-service/
 - TypeScript compiler
 
 ## Implementation Steps
+
 1. Create project structure directories
 2. Initialize package.json with required dependencies
 3. Implement data models in src/models/
@@ -178,6 +194,7 @@ stage3-backend/exercises/todo-service/
 12. Validate ESLint and Prettier compliance
 
 ## Success Criteria
+
 - Service correctly implements all CRUD operations for todos
 - Proper error handling for all endpoints
 - Data validation and sanitization

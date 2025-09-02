@@ -1,10 +1,13 @@
 # Implementation Plan: Small GraphQL API Implementation
 
 ## Task Overview
+
 Create a GraphQL API that demonstrates the fundamentals of GraphQL with TypeScript. This API should showcase schema definition, resolvers, queries, mutations, and integration with a data source.
 
 ## Requirements Analysis
+
 Based on Stage 3 learning objectives, this exercise should demonstrate:
+
 - GraphQL fundamentals (schema, resolvers, queries, mutations)
 - Integration of GraphQL with Express or Fastify
 - Type safety with TypeScript in GraphQL context
@@ -15,6 +18,7 @@ Based on Stage 3 learning objectives, this exercise should demonstrate:
 ## Implementation Approach
 
 ### 1. Project Structure
+
 ```
 stage3-backend/exercises/graphql-api/
 ├── package.json           # Exercise-specific dependencies
@@ -39,6 +43,7 @@ stage3-backend/exercises/graphql-api/
 ### 2. Core Components
 
 #### models/user.ts
+
 - Define User interface with:
   - id: number (auto-generated)
   - name: string
@@ -47,6 +52,7 @@ stage3-backend/exercises/graphql-api/
   - updatedAt: Date
 
 #### models/post.ts
+
 - Define Post interface with:
   - id: number (auto-generated)
   - title: string
@@ -58,6 +64,7 @@ stage3-backend/exercises/graphql-api/
 - Define relationships between User and Post (one-to-many)
 
 #### utils/database.ts
+
 - Implement database simulation with in-memory storage or simple file-based storage
 - Alternative: Use SQLite with a simple query library
 - Implement basic CRUD operations for users and posts
@@ -65,6 +72,7 @@ stage3-backend/exercises/graphql-api/
 - Export database connection/utilities
 
 #### services/dataService.ts
+
 - Implement data access layer for users and posts:
   - getUsers: Retrieve all users
   - getUserById: Retrieve user by ID
@@ -83,24 +91,26 @@ stage3-backend/exercises/graphql-api/
 - Export service functions using named exports
 
 #### schema/typeDefs.ts
+
 - Define GraphQL schema using GraphQL Schema Definition Language (SDL):
   - User type with fields matching the User interface
   - Post type with fields matching the Post interface
   - Query type with:
-    * users: [User!]!
-    * user(id: Int!): User
-    * posts(authorId: Int): [Post!]!
-    * post(id: Int!): Post
+    - users: [User!]!
+    - user(id: Int!): User
+    - posts(authorId: Int): [Post!]!
+    - post(id: Int!): Post
   - Mutation type with:
-    * createUser(name: String!, email: String!): User!
-    * updateUser(id: Int!, name: String, email: String): User
-    * deleteUser(id: Int!): Boolean!
-    * createPost(title: String!, content: String!, authorId: Int!): Post!
-    * updatePost(id: Int!, title: String, content: String, published: Boolean): Post
-    * deletePost(id: Int!): Boolean!
+    - createUser(name: String!, email: String!): User!
+    - updateUser(id: Int!, name: String, email: String): User
+    - deleteUser(id: Int!): Boolean!
+    - createPost(title: String!, content: String!, authorId: Int!): Post!
+    - updatePost(id: Int!, title: String, content: String, published: Boolean): Post
+    - deletePost(id: Int!): Boolean!
   - Input types for mutations
 
 #### schema/resolvers.ts
+
 - Implement GraphQL resolvers matching the schema:
   - Query resolvers for users and posts
   - Mutation resolvers for user and post operations
@@ -110,6 +120,7 @@ stage3-backend/exercises/graphql-api/
 - Export resolvers object
 
 #### index.ts
+
 - Set up Express/Fastify application with GraphQL middleware
 - Configure GraphQL endpoint (e.g., /graphql)
 - Enable GraphQL Playground/Altair for development
@@ -119,6 +130,7 @@ stage3-backend/exercises/graphql-api/
 - Handle application errors
 
 ### 3. Technical Requirements
+
 - Use strict TypeScript mode with all strict options enabled
 - Implement proper error handling with TypeScript's type system
 - Use Express or Fastify with Apollo Server or GraphQL Helix
@@ -129,6 +141,7 @@ stage3-backend/exercises/graphql-api/
 - Include comprehensive JSDoc comments for exported functions and interfaces
 
 ### 4. GraphQL Schema Design
+
 - Define User and Post types with appropriate fields
 - Implement queries for retrieving users and posts
 - Implement mutations for creating, updating, and deleting users and posts
@@ -137,6 +150,7 @@ stage3-backend/exercises/graphql-api/
 - Use non-null types where appropriate with ! suffix
 
 ### 5. Testing Plan
+
 - GraphQL query and mutation tests
 - Test cases for all queries and mutations
 - Test cases for relationship resolution
@@ -147,6 +161,7 @@ stage3-backend/exercises/graphql-api/
 - Follow AAA pattern (Arrange, Act, Assert) for tests
 
 ### 6. Quality Assurance
+
 - All code must pass ESLint and Prettier checks
 - All tests must pass with 100% success rate
 - README.md must include:
@@ -159,6 +174,7 @@ stage3-backend/exercises/graphql-api/
   - Error handling documentation
 
 ### 7. Dependencies
+
 - Express or Fastify for web framework
 - Apollo Server or GraphQL Helix for GraphQL implementation
 - GraphQL for GraphQL utilities
@@ -167,6 +183,7 @@ stage3-backend/exercises/graphql-api/
 - TypeScript compiler
 
 ## Implementation Steps
+
 1. Create project structure directories
 2. Initialize package.json with required dependencies
 3. Implement data models in src/models/
@@ -182,6 +199,7 @@ stage3-backend/exercises/graphql-api/
 13. Validate ESLint and Prettier compliance
 
 ## Success Criteria
+
 - GraphQL API correctly implements all defined queries and mutations
 - Proper error handling for all operations
 - Relationship resolution works correctly

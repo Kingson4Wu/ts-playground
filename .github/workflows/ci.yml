@@ -9,8 +9,6 @@ on:
 jobs:
   setup:
     runs-on: ubuntu-latest
-    outputs:
-      cache-key: ${{ steps.cache-key.outputs.key }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -20,22 +18,10 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Get npm cache key
-        id: cache-key
-        run: echo "key=npm-${{ runner.os }}-20-${{ hashFiles('**/package-lock.json') }}" >> $GITHUB_OUTPUT
-
-      - name: Cache npm
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ steps.cache-key.outputs.key }}
-          restore-keys: |
-            npm-
-
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-  quality-check:
+  format-check:
     runs-on: ubuntu-latest
     needs: setup
     steps:
@@ -47,39 +33,15 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Get npm cache key
-        id: cache-key
-        run: echo "key=npm-${{ runner.os }}-20-${{ hashFiles('**/package-lock.json') }}" >> $GITHUB_OUTPUT
-
-      - name: Restore npm cache
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ steps.cache-key.outputs.key }}
-          restore-keys: |
-            npm-
-
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      - name: ESLint + Prettier check
-        run: |
-          npm run lint --workspaces=false
-          npm run format:check --workspaces=false
+      - name: Check code formatting
+        run: npm run format:check --workspaces=false
 
-  build:
+  lint-root:
     runs-on: ubuntu-latest
-    needs: quality-check
-    strategy:
-      matrix:
-        stage:
-          [
-            root,
-            stage1-foundations,
-            stage2-cli,
-            stage3-backend,
-            stage4-production,
-          ]
+    needs: setup
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -89,28 +51,107 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Get npm cache key
-        id: cache-key
-        run: echo "key=npm-${{ runner.os }}-20-${{ hashFiles('**/package-lock.json') }}" >> $GITHUB_OUTPUT
+      - name: Install dependencies
+        run: npm install
 
-      - name: Restore npm cache
-        uses: actions/cache@v4
+      - name: Lint root project
+        run: npm run lint --workspaces=false
+
+  build:
+    runs-on: ubuntu-latest
+    needs: [setup, format-check]
+    strategy:
+      matrix:
+        stage:
+          - root
+          - stage1-foundations
+          - stage2-cli
+          - stage3-backend
+          - stage4-production
+          - stage1-foundations/exercises/calculator
+          - stage1-foundations/exercises/file-processor
+          - stage1-foundations/exercises/password-generator
+          - stage2-cli/exercises/data-converter
+          - stage2-cli/exercises/file-renamer
+          - stage2-cli/exercises/npm-publisher
+          - stage3-backend/exercises/microservices/service-a
+          - stage3-backend/exercises/microservices/service-b
+          - stage3-backend/exercises/todo-service
+          - stage3-backend/exercises/user-api
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          path: ~/.npm
-          key: ${{ steps.cache-key.outputs.key }}
-          restore-keys: |
-            npm-
+          node-version: '20'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Compile TypeScript
         run: |
           if [ "${{ matrix.stage }}" = "root" ]; then
             npm run build --workspaces=false
+          elif [ "${{ matrix.stage }}" = "stage2-cli" ]; then
+            # Special handling for stage2-cli to install exercise dependencies
+            cd ${{ matrix.stage }}
+            # Install local dependencies if package.json exists
+            if [ -f "package.json" ]; then
+              npm install
+            fi
+            # Install dependencies for exercise projects
+            for exercise in exercises/*/; do
+              if [ -d "$exercise" ] && [ -f "${exercise}package.json" ]; then
+                echo "Installing dependencies for $exercise"
+                (cd "$exercise" && npm install)
+              fi
+            done
+            # Build the stage
+            if [ -f "package.json" ] && grep -q "\"build\"" package.json; then
+              npm run build
+            else
+              echo "No build script found, skipping build"
+            fi
+          elif [ "${{ matrix.stage }}" = "stage3-backend" ]; then
+            # Special handling for stage3-backend to install exercise dependencies
+            cd ${{ matrix.stage }}
+            # Install local dependencies if package.json exists
+            if [ -f "package.json" ]; then
+              npm install
+            fi
+            # Install dependencies for exercise projects
+            for exercise in exercises/*/; do
+              if [ -d "$exercise" ] && [ -f "${exercise}package.json" ]; then
+                echo "Installing dependencies for $exercise"
+                (cd "$exercise" && npm install)
+              fi
+            done
+            # Also install dependencies for microservices subdirectories
+            for exercise in exercises/microservices/*/; do
+              if [ -d "$exercise" ] && [ -f "${exercise}package.json" ]; then
+                echo "Installing dependencies for $exercise"
+                (cd "$exercise" && npm install)
+              fi
+            done
+            # Build the stage
+            if [ -f "package.json" ] && grep -q "\"build\"" package.json; then
+              npm run build
+            else
+              echo "No build script found, skipping build"
+            fi
           else
             cd ${{ matrix.stage }}
-            npm run build
+            # Install local dependencies if package.json exists
+            if [ -f "package.json" ]; then
+              npm install
+            fi
+            if [ -f "package.json" ] && grep -q "\"build\"" package.json; then
+              npm run build
+            else
+              echo "No build script found, skipping build"
+            fi
           fi
 
   test:
@@ -119,7 +160,15 @@ jobs:
     strategy:
       matrix:
         stage:
-          [stage1-foundations, stage2-cli, stage3-backend, stage4-production]
+          - stage1-foundations
+          - stage2-cli
+          - stage4-production
+          - stage1-foundations/exercises/calculator
+          - stage1-foundations/exercises/file-processor
+          - stage1-foundations/exercises/password-generator
+          - stage2-cli/exercises/data-converter
+          - stage2-cli/exercises/file-renamer
+          - stage2-cli/exercises/npm-publisher
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -129,21 +178,71 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Get npm cache key
-        id: cache-key
-        run: echo "key=npm-${{ runner.os }}-20-${{ hashFiles('**/package-lock.json') }}" >> $GITHUB_OUTPUT
-
-      - name: Restore npm cache
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ steps.cache-key.outputs.key }}
-          restore-keys: |
-            npm-
-
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Run tests
-        working-directory: ${{ matrix.stage }}
-        run: npm test
+        run: |
+          cd ${{ matrix.stage }}
+          # Install local dependencies if package.json exists
+          if [ -f "package.json" ]; then
+            npm install
+          fi
+          if [ -f "package.json" ] && grep -q "\"test\"" package.json; then
+            echo "Running tests for ${{ matrix.stage }}..."
+            npm test
+          else
+            echo "No test script found, skipping tests"
+          fi
+
+  test-stage3-backend:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install stage3-backend dependencies
+        run: |
+          cd stage3-backend
+          # Install local dependencies if package.json exists
+          if [ -f "package.json" ]; then
+            npm install
+          fi
+          
+          # Install dependencies for all exercise projects within stage3-backend
+          for exercise in exercises/*/; do
+            if [ -d "$exercise" ] && [ -f "${exercise}package.json" ]; then
+              echo "Installing dependencies for $exercise"
+              (cd "$exercise" && npm install)
+            fi
+          done
+          
+          # Also install dependencies for microservices subdirectories
+          for exercise in exercises/microservices/*/; do
+            if [ -d "$exercise" ] && [ -f "${exercise}package.json" ]; then
+              echo "Installing dependencies for $exercise"
+              (cd "$exercise" && npm install)
+            fi
+          done
+
+      - name: Rebuild native modules
+        run: |
+          cd stage3-backend/exercises/todo-service
+          echo "Rebuilding sqlite3 native module..."
+          npm rebuild sqlite3
+
+      - name: Run stage3-backend tests
+        run: |
+          cd stage3-backend
+          # Run tests according to our setup guide
+          echo "Running stage3-backend tests..."
+          npm test

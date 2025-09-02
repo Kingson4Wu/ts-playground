@@ -1,10 +1,13 @@
 # Implementation Plan: User Management RESTful API (CRUD)
 
 ## Task Overview
+
 Create a RESTful API for user management with full CRUD operations (Create, Read, Update, Delete). This API should demonstrate backend development with TypeScript, including proper API design, data validation, error handling, and integration with a database.
 
 ## Requirements Analysis
+
 Based on Stage 3 learning objectives, this exercise should demonstrate:
+
 - Building RESTful APIs with Express or Fastify
 - HTTP fundamentals (GET, POST, PUT, DELETE requests)
 - Data validation and sanitization
@@ -16,6 +19,7 @@ Based on Stage 3 learning objectives, this exercise should demonstrate:
 ## Implementation Approach
 
 ### 1. Project Structure
+
 ```
 stage3-backend/exercises/user-api/
 ├── package.json           # Exercise-specific dependencies
@@ -38,6 +42,7 @@ stage3-backend/exercises/user-api/
 ### 2. Core Components
 
 #### models/user.ts
+
 - Define User interface with:
   - id: number (auto-generated)
   - name: string
@@ -58,6 +63,7 @@ stage3-backend/exercises/user-api/
   - updatedAt: string (ISO format)
 
 #### utils/database.ts
+
 - Implement in-memory database simulation or simple file-based storage
 - Alternative: Use SQLite with TypeORM/Prisma for a real database experience
 - Implement basic CRUD operations:
@@ -66,6 +72,7 @@ stage3-backend/exercises/user-api/
 - Export database connection/utilities
 
 #### services/userService.ts
+
 - Implement business logic for user operations:
   - createUser: Validate input, check for duplicate email, create user
   - getUserById: Retrieve user by ID
@@ -79,6 +86,7 @@ stage3-backend/exercises/user-api/
 - Export service functions using named exports
 
 #### routes/users.ts
+
 - Implement Express/Fastify routes for user operations:
   - GET /users - Get all users (with pagination)
   - GET /users/:id - Get user by ID
@@ -92,6 +100,7 @@ stage3-backend/exercises/user-api/
 - Implement error handling middleware integration
 
 #### index.ts
+
 - Set up Express/Fastify application
 - Configure middleware (body parser, CORS if needed)
 - Register user routes
@@ -101,6 +110,7 @@ stage3-backend/exercises/user-api/
 - Handle application errors
 
 ### 3. Technical Requirements
+
 - Use strict TypeScript mode with all strict options enabled
 - Implement proper error handling with TypeScript's type system
 - Use Express or Fastify for API framework
@@ -111,6 +121,7 @@ stage3-backend/exercises/user-api/
 - Include comprehensive JSDoc comments for exported functions and interfaces
 
 ### 4. API Design
+
 - Base URL: /api/v1
 - User endpoints:
   - GET /api/v1/users - Retrieve all users (with query parameters for pagination)
@@ -122,6 +133,7 @@ stage3-backend/exercises/user-api/
 - Error responses: Consistent error format with message and code
 
 ### 5. Testing Plan
+
 - Integration tests for all API endpoints
 - Test cases for all CRUD operations
 - Test cases for error conditions (user not found, duplicate email, invalid input)
@@ -131,6 +143,7 @@ stage3-backend/exercises/user-api/
 - Follow AAA pattern (Arrange, Act, Assert) for tests
 
 ### 6. Quality Assurance
+
 - All code must pass ESLint and Prettier checks
 - All tests must pass with 100% success rate
 - README.md must include:
@@ -142,6 +155,7 @@ stage3-backend/exercises/user-api/
   - Error handling documentation
 
 ### 7. Dependencies
+
 - Express or Fastify for API framework
 - TypeORM or Prisma for database integration
 - SQLite for development database (or in-memory simulation)
@@ -151,6 +165,7 @@ stage3-backend/exercises/user-api/
 - TypeScript compiler
 
 ## Implementation Steps
+
 1. Create project structure directories
 2. Initialize package.json with required dependencies
 3. Implement data models in src/models/user.ts
@@ -165,6 +180,7 @@ stage3-backend/exercises/user-api/
 12. Validate ESLint and Prettier compliance
 
 ## Success Criteria
+
 - API correctly implements all CRUD operations for users
 - Proper error handling for all endpoints
 - Data validation and sanitization

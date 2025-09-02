@@ -1,0 +1,25 @@
+name: Debug CI Issue
+
+on:
+  workflow_dispatch:
+
+jobs:
+  debug-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run stage2-cli tests
+        run: |
+          cd stage2-cli/exercises/npm-publisher
+          npm ci
+          npm test

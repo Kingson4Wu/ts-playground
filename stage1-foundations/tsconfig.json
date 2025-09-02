@@ -12,8 +12,14 @@
     "rootDir": ".",
     "removeComments": true,
     "resolveJsonModule": true,
-    "types": ["node", "jest"]
+    "types": ["node"]
   },
-  "include": ["**/*"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["exercises/**/src/**/*", "practice/**/*"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "exercises/**/tests/**/*",
+    "exercises/**/*test.ts",
+    "exercises/**/*spec.ts"
+  ]
 }

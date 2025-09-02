@@ -1,10 +1,13 @@
 # Implementation Plan: JSON/CSV Data Conversion Utility
 
 ## Task Overview
+
 Create a command-line utility that converts data between JSON and CSV formats. The tool should support converting JSON arrays to CSV files and CSV files to JSON arrays, with options for handling nested data, custom delimiters, and field selection.
 
 ## Requirements Analysis
+
 Based on Stage 2 learning objectives, this exercise should demonstrate:
+
 - Advanced CLI development with argument parsing
 - File system operations (reading/writing JSON and CSV files)
 - Data transformation and serialization
@@ -15,6 +18,7 @@ Based on Stage 2 learning objectives, this exercise should demonstrate:
 ## Implementation Approach
 
 ### 1. Project Structure
+
 ```
 stage2-cli/exercises/data-converter/
 ├── package.json           # Exercise-specific dependencies
@@ -29,6 +33,7 @@ stage2-cli/exercises/data-converter/
 ### 2. Core Components
 
 #### converter.ts
+
 - Define ConversionOptions interface with:
   - inputFile: string (path to input file)
   - outputFile: string (path to output file)
@@ -45,14 +50,14 @@ stage2-cli/exercises/data-converter/
   - Return type: Promise<void>
   - Use fs/promises for asynchronous file operations
   - Implement conversion logic:
-    * JSON to CSV:
+    - JSON to CSV:
       - Read and parse JSON file
       - Convert JSON array to CSV format
       - Handle nested objects (flatten if requested)
       - Handle arrays in JSON data
       - Support field selection
       - Write CSV to output file
-    * CSV to JSON:
+    - CSV to JSON:
       - Read and parse CSV file
       - Convert CSV to JSON array
       - Handle custom delimiters
@@ -62,6 +67,7 @@ stage2-cli/exercises/data-converter/
 - Export the interface and function using named exports
 
 #### index.ts
+
 - Use commander or yargs for CLI argument parsing
 - Define CLI options matching ConversionOptions
 - Implement help documentation with examples
@@ -71,6 +77,7 @@ stage2-cli/exercises/data-converter/
 - Output success/error messages to console
 
 ### 3. Technical Requirements
+
 - Use strict TypeScript mode with all strict options enabled
 - Implement proper error handling with TypeScript's type system
 - Use Node.js built-in fs/promises and path modules for file operations
@@ -80,6 +87,7 @@ stage2-cli/exercises/data-converter/
 - Use ES Module syntax for imports/exports
 
 ### 4. Testing Plan
+
 - Unit tests for the convertData function with various conversion scenarios
 - Test cases for JSON to CSV conversion with different data structures
 - Test cases for CSV to JSON conversion with different delimiters
@@ -90,6 +98,7 @@ stage2-cli/exercises/data-converter/
 - Follow AAA pattern (Arrange, Act, Assert) for tests
 
 ### 5. Quality Assurance
+
 - All code must pass ESLint and Prettier checks
 - All tests must pass with 100% success rate
 - README.md must include:
@@ -101,12 +110,14 @@ stage2-cli/exercises/data-converter/
   - Supported data formats and limitations
 
 ### 6. Dependencies
+
 - commander or yargs for CLI argument parsing
 - Use built-in Node.js modules (fs, path)
 - Jest for testing framework
 - ts-jest for TypeScript testing support
 
 ## Implementation Steps
+
 1. Create project structure directories
 2. Initialize package.json with required dependencies
 3. Implement the core conversion logic in src/converter.ts
@@ -118,6 +129,7 @@ stage2-cli/exercises/data-converter/
 9. Validate ESLint and Prettier compliance
 
 ## Success Criteria
+
 - Data converter correctly converts between JSON and CSV formats
 - Proper error handling for file operations and invalid data formats
 - CLI argument parsing works correctly with all options

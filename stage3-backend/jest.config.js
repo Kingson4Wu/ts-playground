@@ -1,19 +1,8 @@
 module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'node',
-  roots: ['<rootDir>/tests'],
-  testMatch: [
-    '**/__tests__/**/*.+(ts|tsx|js)',
-    '**/?(*.)+(spec|test).+(ts|tsx|js)',
+  projects: [
+    '<rootDir>/exercises/todo-service/jest.config.cjs',
+    '<rootDir>/exercises/user-api/jest.config.cjs',
+    '<rootDir>/exercises/microservices/service-a/jest.config.cjs',
+    '<rootDir>/exercises/microservices/service-b/jest.config.cjs',
   ],
-  transform: {
-    '^.+.(ts|tsx)$': 'ts-jest',
-  },
-  collectCoverageFrom: [
-    'src/**/*.{ts,tsx}',
-    '!**/node_modules/**',
-    '!**/dist/**',
-  ],
-  coverageDirectory: 'coverage',
-  coverageReporters: ['text', 'lcov', 'html'],
 };

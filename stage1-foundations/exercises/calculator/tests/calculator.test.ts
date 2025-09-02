@@ -2,10 +2,7 @@
  * Unit tests for the calculator module
  */
 
-import {
-  calculate,
-  Operation,
-} from '../exercises/calculator/src/calculator.js';
+import { calculate, Operation } from '../../calculator/src/calculator.ts';
 
 describe('Calculator', () => {
   describe('addition', () => {

@@ -1,10 +1,13 @@
 # Implementation Plan: Publishing a Simple CLI Tool to npm
 
 ## Task Overview
+
 Create a simple CLI tool and publish it to npm. This exercise will demonstrate the complete workflow of creating, packaging, and publishing a TypeScript-based CLI tool to the npm registry, including proper package configuration, documentation, and distribution.
 
 ## Requirements Analysis
+
 Based on Stage 2 learning objectives, this exercise should demonstrate:
+
 - Complete CLI tool development workflow
 - npm package configuration and publishing
 - TypeScript project configuration for distribution
@@ -15,6 +18,7 @@ Based on Stage 2 learning objectives, this exercise should demonstrate:
 ## Implementation Approach
 
 ### 1. Project Structure
+
 ```
 stage2-cli/exercises/npm-publisher/
 ├── package.json           # Package configuration for npm
@@ -33,6 +37,7 @@ stage2-cli/exercises/npm-publisher/
 ### 2. Core Components
 
 #### tool.ts
+
 - Implement a simple but useful CLI tool functionality:
   - Example: A text analysis tool that counts words, characters, and lines in text
   - Or: A simple file utility that performs common file operations
@@ -43,6 +48,7 @@ stage2-cli/exercises/npm-publisher/
 - Export functions using named exports
 
 #### index.ts
+
 - Serve as the main entry point for the CLI tool
 - Use commander or yargs for CLI argument parsing
 - Implement help documentation with examples
@@ -51,11 +57,13 @@ stage2-cli/exercises/npm-publisher/
 - Output results to console appropriately
 
 #### bin/cli-tool
+
 - Simple executable script that runs the compiled TypeScript tool
 - Should use node to execute the compiled JavaScript
 - Proper shebang line for cross-platform execution
 
 #### package.json
+
 - Configure package for npm publishing:
   - name: Unique package name (e.g., @username/simple-cli-tool)
   - version: Starting version (1.0.0)
@@ -75,6 +83,7 @@ stage2-cli/exercises/npm-publisher/
   - bugs: Link to issue tracker
 
 #### tsconfig.json
+
 - TypeScript configuration optimized for library distribution:
   - Target modern JavaScript (ES2020 or later)
   - Module system: CommonJS for Node.js compatibility
@@ -83,6 +92,7 @@ stage2-cli/exercises/npm-publisher/
   - Output directory configuration
 
 ### 3. Technical Requirements
+
 - Use strict TypeScript mode with all strict options enabled
 - Implement proper error handling with TypeScript's type system
 - Follow naming conventions (kebab-case for files, camelCase for variables)
@@ -91,6 +101,7 @@ stage2-cli/exercises/npm-publisher/
 - Generate CommonJS modules for npm distribution
 
 ### 4. Testing Plan
+
 - Unit tests for the core tool functionality
 - Test cases for all supported operations
 - Test cases for error conditions
@@ -99,6 +110,7 @@ stage2-cli/exercises/npm-publisher/
 - Follow AAA pattern (Arrange, Act, Assert) for tests
 
 ### 5. Quality Assurance
+
 - All code must pass ESLint and Prettier checks
 - All tests must pass with 100% success rate
 - README.md must include:
@@ -112,6 +124,7 @@ stage2-cli/exercises/npm-publisher/
 - Dist directory must contain compiled JavaScript and declaration files
 
 ### 6. Publishing Workflow
+
 1. Create npm account if needed
 2. Configure package.json with proper metadata
 3. Build the project (compile TypeScript to JavaScript)
@@ -122,6 +135,7 @@ stage2-cli/exercises/npm-publisher/
 8. Test installation and usage via `npx`
 
 ### 7. Dependencies
+
 - commander or yargs for CLI argument parsing
 - Use built-in Node.js modules
 - Jest for testing framework
@@ -130,6 +144,7 @@ stage2-cli/exercises/npm-publisher/
 - ESLint and Prettier for code quality
 
 ## Implementation Steps
+
 1. Create project structure directories
 2. Initialize package.json with proper configuration for npm publishing
 3. Implement the core tool logic in src/tool.ts
@@ -145,6 +160,7 @@ stage2-cli/exercises/npm-publisher/
 13. Publish to npm registry
 
 ## Success Criteria
+
 - CLI tool has useful functionality and works correctly
 - Package is properly configured for npm publishing
 - All unit tests pass with 100% success rate

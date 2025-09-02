@@ -7,6 +7,12 @@ import app from '../src/index';
 import { sequelize, UserModel, TodoModel } from '../src/utils/database';
 
 describe('Todo API', () => {
+  // Initialize database before running tests
+  beforeAll(async () => {
+    // Sync database models
+    await sequelize.sync({ force: true });
+  });
+
   // Clear the database before each test
   beforeEach(async () => {
     await TodoModel.destroy({ where: {} });

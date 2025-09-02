@@ -7,7 +7,7 @@ import { join } from 'path';
 import {
   processFile,
   OperationType,
-} from '../exercises/file-processor/src/file-processor.js';
+} from '../../file-processor/src/file-processor.ts';
 
 // Create a temporary directory for test files
 const tempDir = join(process.cwd(), 'temp-tests');

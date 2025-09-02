@@ -40,6 +40,7 @@ Scope should identify the stage or component affected by the commit, such as:
 ## Commit Message Standards
 
 **Important:** must use a genuine blank line (not using `\n` character) and run the script `scripts/clean_commit.sh` after committing.
+
 1. Write commit messages in English
 2. First line is a brief description (<72 characters)
 3. Second line must be a genuine blank line (not using `\n` character)

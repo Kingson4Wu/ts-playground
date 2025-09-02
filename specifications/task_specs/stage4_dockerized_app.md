@@ -1,10 +1,13 @@
 # Implementation Plan: Dockerized Application
 
 ## Task Overview
+
 Containerize a TypeScript application using Docker. This exercise will demonstrate how to create a Docker image for a TypeScript application, optimize the image for production, and run the containerized application.
 
 ## Requirements Analysis
+
 Based on Stage 4 learning objectives, this exercise should demonstrate:
+
 - Containerization concepts with Docker
 - Multi-stage Docker builds for TypeScript applications
 - Dockerfile optimization for production
@@ -15,6 +18,7 @@ Based on Stage 4 learning objectives, this exercise should demonstrate:
 ## Implementation Approach
 
 ### 1. Project Structure
+
 ```
 stage4-production/exercises/dockerized-app/
 ├── package.json           # Exercise-specific dependencies
@@ -33,6 +37,7 @@ stage4-production/exercises/dockerized-app/
 ### 2. Core Components
 
 #### app.ts
+
 - Implement a simple but complete application:
   - Example: A REST API server with a few endpoints
   - Or: A CLI tool that can run as a service
@@ -42,6 +47,7 @@ stage4-production/exercises/dockerized-app/
 - Export application functionality
 
 #### index.ts
+
 - Serve as the main entry point for the application
 - Parse environment variables
 - Initialize the application
@@ -49,18 +55,19 @@ stage4-production/exercises/dockerized-app/
 - Start the application server or service
 
 #### Dockerfile
+
 - Implement a multi-stage Docker build:
   - Builder stage:
-    * Use Node.js Alpine image as base
-    * Copy package files and install dependencies
-    * Copy source code and compile TypeScript to JavaScript
+    - Use Node.js Alpine image as base
+    - Copy package files and install dependencies
+    - Copy source code and compile TypeScript to JavaScript
   - Production stage:
-    * Use Node.js Alpine image as base
-    * Copy compiled JavaScript and declaration files from builder stage
-    * Copy package.json and install production dependencies only
-    * Create non-root user for security
-    * Expose appropriate port
-    * Define entry point and command
+    - Use Node.js Alpine image as base
+    - Copy compiled JavaScript and declaration files from builder stage
+    - Copy package.json and install production dependencies only
+    - Create non-root user for security
+    - Expose appropriate port
+    - Define entry point and command
 - Optimize for security and performance:
   - Use non-root user
   - Minimize layers
@@ -68,6 +75,7 @@ stage4-production/exercises/dockerized-app/
   - Use appropriate health checks
 
 #### .dockerignore
+
 - Exclude files and directories from Docker context:
   - node_modules/
   - dist/
@@ -75,7 +83,7 @@ stage4-production/exercises/dockerized-app/
   - .git/
   - .github/
   - .vscode/
-  - *.md (except README.md if needed)
+  - \*.md (except README.md if needed)
   - .env
   - .gitignore
   - .npmrc
@@ -83,6 +91,7 @@ stage4-production/exercises/dockerized-app/
   - docker-compose.yml
 
 #### docker-compose.yml (Optional)
+
 - Define multi-container setup if needed:
   - Application service
   - Database service (if applicable)
@@ -91,6 +100,7 @@ stage4-production/exercises/dockerized-app/
 - Define networks and volumes if needed
 
 #### package.json
+
 - Configure scripts for Docker workflow:
   - build: Compile TypeScript to JavaScript
   - start: Run the application
@@ -98,6 +108,7 @@ stage4-production/exercises/dockerized-app/
 - Define appropriate dependencies and devDependencies
 
 ### 3. Technical Requirements
+
 - Use strict TypeScript mode with all strict options enabled
 - Implement proper error handling with TypeScript's type system
 - Follow Docker best practices
@@ -109,6 +120,7 @@ stage4-production/exercises/dockerized-app/
 - Include comprehensive JSDoc comments for exported functions and interfaces
 
 ### 4. Docker Configuration
+
 - Multi-stage build process:
   - Build stage with development dependencies
   - Production stage with only runtime dependencies
@@ -126,6 +138,7 @@ stage4-production/exercises/dockerized-app/
   - Default values for all environment variables
 
 ### 5. Testing Plan
+
 - Test Docker image build process
 - Test containerized application functionality
 - Test environment variable configuration
@@ -136,6 +149,7 @@ stage4-production/exercises/dockerized-app/
 - Follow AAA pattern (Arrange, Act, Assert) for tests
 
 ### 6. Quality Assurance
+
 - All code must pass ESLint and Prettier checks
 - All tests must pass with 100% success rate
 - README.md must include:
@@ -148,6 +162,7 @@ stage4-production/exercises/dockerized-app/
   - Security considerations
 
 ### 7. Dependencies
+
 - Express or Fastify for web framework (if building an API)
 - Jest for testing framework
 - ts-jest for TypeScript testing support
@@ -156,6 +171,7 @@ stage4-production/exercises/dockerized-app/
 - Docker Compose (optional)
 
 ## Implementation Steps
+
 1. Create project structure directories
 2. Initialize package.json with required dependencies
 3. Implement core application logic in src/app.ts
@@ -172,6 +188,7 @@ stage4-production/exercises/dockerized-app/
 14. Validate ESLint and Prettier compliance
 
 ## Success Criteria
+
 - Docker image builds successfully with multi-stage process
 - Containerized application runs correctly
 - Environment variables are properly configured

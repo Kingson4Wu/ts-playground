@@ -5,7 +5,6 @@
  */
 
 import axios from 'axios';
-import type { AxiosInstance } from 'axios';
 import { Order, OrderStatus } from '../models/data.js';
 
 /**
@@ -17,7 +16,7 @@ let nextOrderId = 1;
 /**
  * Axios instance for service-to-service communication
  */
-const apiClient: AxiosInstance = axios.create({
+const apiClient = axios.create({
   baseURL: 'http://localhost:3002/api/v1', // Service B base URL
   timeout: 5000,
 });
@@ -42,7 +41,7 @@ export async function createOrder(
     if (!customerResponse.data.valid) {
       throw new Error(`Customer with ID ${customerId} not found`);
     }
-  } catch (error) {
+  } catch (error: any) {
     if (axios.isAxiosError(error)) {
       throw new Error(`Failed to validate customer: ${error.message}`);
     }
@@ -63,7 +62,7 @@ export async function createOrder(
         `Product with ID ${productId} is not available in quantity ${quantity}`
       );
     }
-  } catch (error) {
+  } catch (error: any) {
     if (axios.isAxiosError(error)) {
       throw new Error(`Failed to check product availability: ${error.message}`);
     }
@@ -155,7 +154,7 @@ export async function processOrder(orderId: number): Promise<boolean> {
       return true;
     }
     return false;
-  } catch (error) {
+  } catch (error: any) {
     if (axios.isAxiosError(error)) {
       console.error(`Failed to update product inventory: ${error.message}`);
     }
@@ -183,7 +182,7 @@ export async function cancelOrder(id: number): Promise<boolean> {
       await apiClient.post(`/products/${order.productId}/update-inventory`, {
         quantity: -order.quantity, // Negative quantity to add back to inventory
       });
-    } catch (error) {
+    } catch (error: any) {
       if (axios.isAxiosError(error)) {
         console.error(`Failed to restock product: ${error.message}`);
       }

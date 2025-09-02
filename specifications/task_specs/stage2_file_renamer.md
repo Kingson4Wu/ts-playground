@@ -1,10 +1,13 @@
 # Implementation Plan: Batch File Renaming Tool
 
 ## Task Overview
+
 Create a command-line tool that can rename multiple files in a directory based on various patterns and rules. This tool should support operations like adding prefixes/suffixes, changing case, replacing text, and sequential numbering.
 
 ## Requirements Analysis
+
 Based on Stage 2 learning objectives, this exercise should demonstrate:
+
 - Advanced CLI development with argument parsing
 - File system operations (reading directories, renaming files)
 - String manipulation and pattern matching
@@ -15,6 +18,7 @@ Based on Stage 2 learning objectives, this exercise should demonstrate:
 ## Implementation Approach
 
 ### 1. Project Structure
+
 ```
 stage2-cli/exercises/file-renamer/
 ├── package.json          # Exercise-specific dependencies
@@ -29,6 +33,7 @@ stage2-cli/exercises/file-renamer/
 ### 2. Core Components
 
 #### renamer.ts
+
 - Define RenameOptions interface with:
   - directory: string (target directory path)
   - pattern: string (pattern to match files)
@@ -45,17 +50,18 @@ stage2-cli/exercises/file-renamer/
   - Use fs/promises for asynchronous file operations
   - Use glob patterns or simple pattern matching for file selection
   - Implement all operations:
-    * add-prefix: Add a prefix to all matching filenames
-    * add-suffix: Add a suffix to all matching filenames
-    * change-case: Change filename case (upper, lower, title)
-    * replace: Replace text in filenames
-    * sequence: Rename files with sequential numbers
+    - add-prefix: Add a prefix to all matching filenames
+    - add-suffix: Add a suffix to all matching filenames
+    - change-case: Change filename case (upper, lower, title)
+    - replace: Replace text in filenames
+    - sequence: Rename files with sequential numbers
   - Handle file reading and renaming errors appropriately
   - Validate operation parameters
   - Return statistics about the operation (files renamed, errors)
 - Export the interface and function using named exports
 
 #### index.ts
+
 - Use commander or yargs for CLI argument parsing
 - Define CLI options matching RenameOptions
 - Implement help documentation with examples
@@ -65,6 +71,7 @@ stage2-cli/exercises/file-renamer/
 - Output operation statistics to console
 
 ### 3. Technical Requirements
+
 - Use strict TypeScript mode with all strict options enabled
 - Implement proper error handling with TypeScript's type system
 - Use Node.js built-in fs/promises and path modules for file operations
@@ -74,6 +81,7 @@ stage2-cli/exercises/file-renamer/
 - Use ES Module syntax for imports/exports
 
 ### 4. Testing Plan
+
 - Unit tests for the renameFiles function with various operations
 - Test cases for all operation types
 - Test cases for error conditions (directory not found, permission errors)
@@ -83,6 +91,7 @@ stage2-cli/exercises/file-renamer/
 - Follow AAA pattern (Arrange, Act, Assert) for tests
 
 ### 5. Quality Assurance
+
 - All code must pass ESLint and Prettier checks
 - All tests must pass with 100% success rate
 - README.md must include:
@@ -94,12 +103,14 @@ stage2-cli/exercises/file-renamer/
   - Installation instructions if needed
 
 ### 6. Dependencies
+
 - commander or yargs for CLI argument parsing
 - Use built-in Node.js modules (fs, path)
 - Jest for testing framework
 - ts-jest for TypeScript testing support
 
 ## Implementation Steps
+
 1. Create project structure directories
 2. Initialize package.json with required dependencies
 3. Implement the core renaming logic in src/renamer.ts
@@ -111,6 +122,7 @@ stage2-cli/exercises/file-renamer/
 9. Validate ESLint and Prettier compliance
 
 ## Success Criteria
+
 - File renamer correctly performs all specified operations
 - Proper error handling for file operations and invalid inputs
 - CLI argument parsing works correctly with all options
