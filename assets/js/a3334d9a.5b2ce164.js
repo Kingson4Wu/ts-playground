@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkts_playground_documentation=globalThis.webpackChunkts_playground_documentation||[]).push([[9711],{2421:a=>{a.exports=JSON.parse('{"label":"docusaurus","permalink":"/ts-playground/blog/tags/docusaurus","allTagsPath":"/ts-playground/blog/tags","count":4,"unlisted":false}')}}]);

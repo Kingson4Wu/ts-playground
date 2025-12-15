@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkts_playground_documentation=globalThis.webpackChunkts_playground_documentation||[]).push([[2625],{2353:l=>{l.exports=JSON.parse('{"label":"hello","permalink":"/ts-playground/blog/tags/hello","allTagsPath":"/ts-playground/blog/tags","count":2,"unlisted":false}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkts_playground_documentation=globalThis.webpackChunkts_playground_documentation||[]).push([[9010],{8499:a=>{a.exports=JSON.parse('{"label":"facebook","permalink":"/ts-playground/blog/tags/facebook","allTagsPath":"/ts-playground/blog/tags","count":1,"unlisted":false}')}}]);
