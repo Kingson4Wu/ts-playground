@@ -1,99 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://kingsonwu.github.io/ts-playground/blog</id>
-    <title>ts-playground Blog</title>
-    <updated>2021-08-26T00:00:00.000Z</updated>
+    <id>https://Kingson4Wu.github.io/ts-playground/blog</id>
+    <title>ts-playground - Professional TypeScript Learning Environment Blog</title>
+    <updated>2025-05-01T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://kingsonwu.github.io/ts-playground/blog"/>
-    <subtitle>ts-playground Blog</subtitle>
-    <icon>https://kingsonwu.github.io/ts-playground/img/favicon.ico</icon>
+    <link rel="alternate" href="https://Kingson4Wu.github.io/ts-playground/blog"/>
+    <subtitle>ts-playground - Professional TypeScript Learning Environment Blog</subtitle>
+    <icon>https://Kingson4Wu.github.io/ts-playground/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[Welcome]]></title>
-        <id>https://kingsonwu.github.io/ts-playground/blog/welcome</id>
-        <link href="https://kingsonwu.github.io/ts-playground/blog/welcome"/>
-        <updated>2021-08-26T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Docusaurus blogging features are powered by the blog plugin.]]></summary>
-        <content type="html"><![CDATA[<p><a href="https://docusaurus.io/docs/blog" target="_blank" rel="noopener noreferrer">Docusaurus blogging features</a> are powered by the <a href="https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog" target="_blank" rel="noopener noreferrer">blog plugin</a>.</p>
-<p>Simply add Markdown files (or folders) to the <code>blog</code> directory.</p>
-<p>Regular blog authors can be added to <code>authors.yml</code>.</p>
-<p>The blog post date can be extracted from filenames, such as:</p>
+        <title type="html"><![CDATA[Introducing ts-playground: TypeScript Learning Environment]]></title>
+        <id>https://Kingson4Wu.github.io/ts-playground/blog/2025/05/01/introducing-ts-playground</id>
+        <link href="https://Kingson4Wu.github.io/ts-playground/blog/2025/05/01/introducing-ts-playground"/>
+        <updated>2025-05-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Discover how ts-playground provides a structured learning path from TypeScript foundations to production deployment for backend developers]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="introducing-ts-playground-your-journey-from-typescript-novice-to-professional">Introducing ts-playground: Your Journey from TypeScript Novice to Professional<a href="https://kingson4wu.github.io/ts-playground/blog/2025/05/01/introducing-ts-playground#introducing-ts-playground-your-journey-from-typescript-novice-to-professional" class="hash-link" aria-label="Direct link to Introducing ts-playground: Your Journey from TypeScript Novice to Professional" title="Direct link to Introducing ts-playground: Your Journey from TypeScript Novice to Professional" translate="no">​</a></h2>
+<p>Welcome to <strong>ts-playground</strong>, a comprehensive and professionally structured learning environment designed to guide developers through a progressive mastery of TypeScript, specifically tailored for backend development.</p>
+<p>Backend developers face unique challenges when learning TypeScript. The rich type system, extensive tooling, and sophisticated features can feel overwhelming.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-learning-challenge">The Learning Challenge<a href="https://kingson4wu.github.io/ts-playground/blog/2025/05/01/introducing-ts-playground#the-learning-challenge" class="hash-link" aria-label="Direct link to The Learning Challenge" title="Direct link to The Learning Challenge" translate="no">​</a></h3>
+<p>Learning TypeScript can be daunting. With its rich type system, extensive tooling, and sophisticated features, many developers find themselves overwhelmed or unsure of where to start. Traditional tutorials often provide isolated examples without showing how concepts integrate into real-world applications.</p>
+<p><strong>ts-playground</strong> addresses this challenge by offering a complete, progressive learning pathway that bridges the gap between theoretical knowledge and practical application.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="four-stage-learning-progression">Four-Stage Learning Progression<a href="https://kingson4wu.github.io/ts-playground/blog/2025/05/01/introducing-ts-playground#four-stage-learning-progression" class="hash-link" aria-label="Direct link to Four-Stage Learning Progression" title="Direct link to Four-Stage Learning Progression" translate="no">​</a></h3>
+<p>Our curriculum is divided into four carefully structured stages, each building on the previous one:</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-typescript-foundations">1. TypeScript Foundations<a href="https://kingson4wu.github.io/ts-playground/blog/2025/05/01/introducing-ts-playground#1-typescript-foundations" class="hash-link" aria-label="Direct link to 1. TypeScript Foundations" title="Direct link to 1. TypeScript Foundations" translate="no">​</a></h4>
+<p>Master TypeScript's powerful type system, from basic primitives to advanced generics, conditional types, and mapped types. Learn professional development practices with strict compilation settings and proper code organization.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-cli-application-development">2. CLI Application Development<a href="https://kingson4wu.github.io/ts-playground/blog/2025/05/01/introducing-ts-playground#2-cli-application-development" class="hash-link" aria-label="Direct link to 2. CLI Application Development" title="Direct link to 2. CLI Application Development" translate="no">​</a></h4>
+<p>Apply your TypeScript knowledge to build robust command-line tools. Learn about system integration, package publishing, configuration management, and creating user-friendly interfaces with industry-standard tools.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-backend-api-development">3. Backend API Development<a href="https://kingson4wu.github.io/ts-playground/blog/2025/05/01/introducing-ts-playground#3-backend-api-development" class="hash-link" aria-label="Direct link to 3. Backend API Development" title="Direct link to 3. Backend API Development" translate="no">​</a></h4>
+<p>Develop enterprise-grade backend services with RESTful APIs, database integration, authentication systems, and comprehensive testing strategies. Emphasize security, performance, and architectural best practices.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-production-deployment--optimization">4. Production Deployment &amp; Optimization<a href="https://kingson4wu.github.io/ts-playground/blog/2025/05/01/introducing-ts-playground#4-production-deployment--optimization" class="hash-link" aria-label="Direct link to 4. Production Deployment &amp; Optimization" title="Direct link to 4. Production Deployment &amp; Optimization" translate="no">​</a></h4>
+<p>Master deployment strategies, monitoring, performance optimization, and operational excellence. Learn containerization, security hardening, and real-world maintenance practices.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="professional-development-standards">Professional Development Standards<a href="https://kingson4wu.github.io/ts-playground/blog/2025/05/01/introducing-ts-playground#professional-development-standards" class="hash-link" aria-label="Direct link to Professional Development Standards" title="Direct link to Professional Development Standards" translate="no">​</a></h3>
+<p>Every exercise in <strong>ts-playground</strong> adheres to professional development standards:</p>
 <ul>
-<li><code>2019-05-30-welcome.md</code></li>
-<li><code>2019-05-30-welcome/index.md</code></li>
+<li class=""><strong>Strict TypeScript Compilation</strong>: All code follows strict mode with comprehensive type safety</li>
+<li class=""><strong>Code Quality Pipeline</strong>: Integrated ESLint, Prettier, and testing frameworks with 80%+ coverage requirements</li>
+<li class=""><strong>Industry Best Practices</strong>: Real-world architectural patterns, security implementations, and performance optimization</li>
+<li class=""><strong>Comprehensive Documentation</strong>: Every component is properly documented with JSDoc and usage examples</li>
 </ul>
-<p>A blog post folder can be convenient to co-locate blog post images:</p>
-<p><img loading="lazy" alt="Docusaurus Plushie" src="https://kingsonwu.github.io/ts-playground/assets/images/docusaurus-plushie-banner-a60f7593abca1e3eef26a9afa244e4fb.jpeg" width="1500" height="500" class="img_ev3q"></p>
-<p>The blog supports tags as well!</p>
-<p><strong>And if you don't want a blog</strong>: just delete this directory, and use <code>blog: false</code> in your Docusaurus config.</p>]]></content>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="who-should-use-ts-playground">Who Should Use ts-playground?<a href="https://kingson4wu.github.io/ts-playground/blog/2025/05/01/introducing-ts-playground#who-should-use-ts-playground" class="hash-link" aria-label="Direct link to Who Should Use ts-playground?" title="Direct link to Who Should Use ts-playground?" translate="no">​</a></h3>
+<p><strong>ts-playground</strong> is ideal for:</p>
+<ul>
+<li class=""><strong>Backend developers</strong> looking to adopt TypeScript for server-side applications</li>
+<li class=""><strong>JavaScript developers</strong> seeking to advance their type safety and application architecture skills</li>
+<li class=""><strong>Engineering teams</strong> implementing TypeScript adoption strategies</li>
+<li class=""><strong>Students</strong> and self-taught developers seeking comprehensive, structured learning</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="learning-by-doing">Learning by Doing<a href="https://kingson4wu.github.io/ts-playground/blog/2025/05/01/introducing-ts-playground#learning-by-doing" class="hash-link" aria-label="Direct link to Learning by Doing" title="Direct link to Learning by Doing" translate="no">​</a></h3>
+<p>Our philosophy emphasizes hands-on practice with real-world applications. Each stage includes:</p>
+<ul>
+<li class="">Progressive exercises that build in complexity</li>
+<li class="">Complete project implementations</li>
+<li class="">Professional-grade code reviews and standards</li>
+<li class="">Integration with industry-standard tools and workflows</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="getting-started">Getting Started<a href="https://kingson4wu.github.io/ts-playground/blog/2025/05/01/introducing-ts-playground#getting-started" class="hash-link" aria-label="Direct link to Getting Started" title="Direct link to Getting Started" translate="no">​</a></h3>
+<p>Ready to begin your TypeScript mastery journey? The <a class="" href="https://kingson4wu.github.io/ts-playground/intro">project documentation</a> provides complete setup instructions, learning objectives, and detailed exercises for each stage.</p>
+<p>Whether you're starting from the foundations or looking to advance your existing TypeScript knowledge to production-ready applications, <strong>ts-playground</strong> provides the structured path to professional TypeScript development.</p>
+<p>Start with the <a class="" href="https://kingson4wu.github.io/ts-playground/intro">Getting Started guide</a> and begin building your expertise in one of the most valuable skills for modern backend development.</p>
+<hr>
+<p><em>Join thousands of developers who have advanced their TypeScript skills through ts-playground's structured learning environment.</em></p>]]></content>
         <author>
-            <name>Sébastien Lorber</name>
-            <uri>https://sebastienlorber.com</uri>
+            <name>Kingson Wu</name>
+            <uri>https://github.com/Kingson4Wu</uri>
         </author>
-        <author>
-            <name>Yangshun Tay</name>
-            <uri>https://github.com/yangshun</uri>
-        </author>
-        <category label="facebook" term="facebook"/>
-        <category label="hello" term="hello"/>
-        <category label="docusaurus" term="docusaurus"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[MDX Blog Post]]></title>
-        <id>https://kingsonwu.github.io/ts-playground/blog/mdx-blog-post</id>
-        <link href="https://kingsonwu.github.io/ts-playground/blog/mdx-blog-post"/>
-        <updated>2021-08-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Blog posts support Docusaurus Markdown features, such as MDX.]]></summary>
-        <content type="html"><![CDATA[<p>Blog posts support <a href="https://docusaurus.io/docs/markdown-features" target="_blank" rel="noopener noreferrer">Docusaurus Markdown features</a>, such as <a href="https://mdxjs.com/" target="_blank" rel="noopener noreferrer">MDX</a>.</p>
-<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>Use the power of React to create interactive blog posts.</p><div class="language-js codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-js codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token operator" style="color:#393A34">&lt;</span><span class="token plain">button onClick</span><span class="token operator" style="color:#393A34">=</span><span class="token punctuation" style="color:#393A34">{</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token arrow operator" style="color:#393A34">=&gt;</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">alert</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">'button clicked!'</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">}</span><span class="token operator" style="color:#393A34">&gt;</span><span class="token maybe-class-name">Click</span><span class="token plain"> me</span><span class="token operator" style="color:#393A34">!</span><span class="token operator" style="color:#393A34">&lt;</span><span class="token operator" style="color:#393A34">/</span><span class="token plain">button</span><span class="token operator" style="color:#393A34">&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><button>Click me!</button></div></div>]]></content>
-        <author>
-            <name>Sébastien Lorber</name>
-            <uri>https://sebastienlorber.com</uri>
-        </author>
-        <category label="docusaurus" term="docusaurus"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Long Blog Post]]></title>
-        <id>https://kingsonwu.github.io/ts-playground/blog/long-blog-post</id>
-        <link href="https://kingsonwu.github.io/ts-playground/blog/long-blog-post"/>
-        <updated>2019-05-29T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[This is the summary of a very long blog post,]]></summary>
-        <content type="html"><![CDATA[<p>This is the summary of a very long blog post,</p>
-<p>Use a <code>&lt;!--</code> <code>truncate</code> <code>--&gt;</code> comment to limit blog post size in the list view.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content>
-        <author>
-            <name>Endilie Yacop Sucipto</name>
-            <uri>https://github.com/endiliey</uri>
-        </author>
-        <category label="hello" term="hello"/>
-        <category label="docusaurus" term="docusaurus"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[First Blog Post]]></title>
-        <id>https://kingsonwu.github.io/ts-playground/blog/first-blog-post</id>
-        <link href="https://kingsonwu.github.io/ts-playground/blog/first-blog-post"/>
-        <updated>2019-05-28T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet]]></summary>
-        <content type="html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content>
-        <author>
-            <name>Gao Wei</name>
-            <uri>https://github.com/wgao19</uri>
-        </author>
-        <category label="hola" term="hola"/>
-        <category label="docusaurus" term="docusaurus"/>
+        <category label="typescript" term="typescript"/>
+        <category label="learning" term="learning"/>
+        <category label="backend" term="backend"/>
+        <category label="development" term="development"/>
+        <category label="education" term="education"/>
     </entry>
 </feed>
