@@ -4,6 +4,8 @@
   "description": "A structured learning environment for mastering TypeScript with a focus on backend development",
   "main": "index.js",
   "scripts": {
+    "start": "echo 'This is an educational project with multiple learning stages. See documentation for how to run specific stages.'",
+    "start:docs": "cd documentation/website && npm start",
     "build": "tsc",
     "dev": "tsx watch",
     "test": "echo 'Running all tests...' && npm run test:stage1 && npm run test:stage2 && npm run test:stage3 && npm run test:stage4 && echo 'All tests completed successfully!'",
@@ -29,12 +31,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kingsonwu/ts-playground.git"
+    "url": "https://github.com/Kingson4Wu/ts-playground.git"
   },
   "bugs": {
-    "url": "https://github.com/kingsonwu/ts-playground/issues"
+    "url": "https://github.com/Kingson4Wu/ts-playground/issues"
   },
-  "homepage": "https://github.com/kingsonwu/ts-playground#readme",
+  "homepage": "https://github.com/Kingson4Wu/ts-playground#readme",
   "devDependencies": {
     "@types/node": "20.11.30",
     "@typescript-eslint/eslint-plugin": "6.21.0",

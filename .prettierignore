@@ -44,3 +44,12 @@ yarn.lock
 
 # GitHub workflow files (they should be formatted by GitHub's own formatter)
 .github/workflows/
+
+# Documentation directory (managed separately)
+documentation/
+
+# Qwen settings file
+.qwen/settings.json
+
+# AGENTS.md file to exclude from formatting
+AGENTS.md

@@ -13,3 +13,12 @@ build/
 
 # 忽略 package-lock
 package-lock.json
+
+# 忽略文档目录
+documentation/
+
+# 忽略 Qwen settings
+.qwen/
+
+# 忽略 AGENTS.md
+AGENTS.md

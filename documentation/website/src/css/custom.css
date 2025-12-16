@@ -1,0 +1,50 @@
+/* You can override the default Docusaurus styling with your own custom styles here. */
+
+:root {
+  --ifm-color-primary: #3578e5;
+  --ifm-color-primary-dark: #1d68e1;
+  --ifm-color-primary-darker: #1b62d4;
+  --ifm-color-primary-darkest: #154f9e;
+  --ifm-color-primary-light: #4e89e9;
+  --ifm-color-primary-lighter: #5a91eb;
+  --ifm-color-primary-lightest: #80aaef;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* Custom styles for ts-playground documentation */
+.hero--primary {
+  background: linear-gradient(135deg, #3578e5 0%, #1b62d4 100%);
+}
+
+.footer--dark {
+  --ifm-footer-background-color: #242526;
+}
+
+/* Code block styling */
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+/* Typography improvements */
+.markdown h1, .markdown h2, .markdown h3 {
+  font-weight: 600;
+}
+
+/* Sidebar improvements */
+.menu {
+  font-size: 0.9rem;
+}
+
+/* Button styling */
+.button--primary {
+  background-color: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+}
+
+.button--primary:hover {
+  background-color: var(--ifm-color-primary-dark);
+  border-color: var(--ifm-color-primary-dark);
+}

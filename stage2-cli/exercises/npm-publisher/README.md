@@ -15,13 +15,13 @@ A simple command-line tool for analyzing text files.
 You can install this tool globally using npm:
 
 ```bash
-npm install -g @kingsonwu/text-analyzer-cli
+npm install -g @Kingson4Wu/text-analyzer-cli
 ```
 
 Or run it directly using npx without installing:
 
 ```bash
-npx @kingsonwu/text-analyzer-cli <file>
+npx @Kingson4Wu/text-analyzer-cli <file>
 ```
 
 ## Usage
@@ -50,7 +50,7 @@ text-analyzer document.txt
 text-analyzer document.txt -f json
 
 # Run directly with npx
-npx @kingsonwu/text-analyzer-cli document.txt
+npx @Kingson4Wu/text-analyzer-cli document.txt
 ```
 
 ## Output
@@ -126,7 +126,7 @@ npm run dev -- <file> [options]
 The tool can also be used programmatically:
 
 ```javascript
-import { analyzeText } from '@kingsonwu/text-analyzer-cli';
+import { analyzeText } from '@Kingson4Wu/text-analyzer-cli';
 
 const text = 'Hello world! This is a test.';
 const analysis = analyzeText(text);

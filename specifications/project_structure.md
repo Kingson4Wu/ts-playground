@@ -12,7 +12,7 @@ ts-playground/
 ├── CONTRIBUTING.md
 ├── LICENSE
 ├── README.md
-├── PROJECT.md
+├── AGENTS.md
 ├── package.json
 ├── tsconfig.json
 ├── .editorconfig
@@ -168,7 +168,7 @@ ts-playground/
 - `.gitignore`: Git ignore patterns for TypeScript/Node.js projects
 - `LICENSE`: MIT License file
 - `README.md`: Main documentation with learning pathway
-- `PROJECT.md`: Project specification and context file for AI tools
+- `AGENTS.md`: Project specification and context file for AI tools
 - `package.json`: Root package configuration with workspace definitions
 - `tsconfig.json`: Base TypeScript configuration
 - `.eslintrc.js`: ESLint configuration for code quality

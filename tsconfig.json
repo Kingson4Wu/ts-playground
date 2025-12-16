@@ -37,6 +37,7 @@
     "stage2-cli/exercises",
     "stage3-backend/exercises",
     "stage4-production/exercises",
-    "stage4-production/practice/playground.ts"
+    "stage4-production/practice/playground.ts",
+    "documentation"
   ]
 }

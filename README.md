@@ -86,7 +86,7 @@ ts-playground/
 ├── CONTRIBUTING.md
 ├── LICENSE
 ├── README.md
-├── PROJECT.md
+├── AGENTS.md
 ├── package.json
 ├── tsconfig.json
 ├── .eslintrc.js
