@@ -71,6 +71,14 @@ const darkCodeTheme = require('prism-react-renderer').themes.dracula;
         {name: 'application-name', content: 'ts-playground'},
       ],
       headTags: [
+        {
+          tagName: 'script',
+          attributes: {
+            defer: true,
+            src: 'https://static.cloudflareinsights.com/beacon.min.js',
+            'data-cf-beacon': '{"token": "40cb59600d874d4ebe8da6d9367b4394"}',
+          },
+        },
         // Additional head tags for better favicon support across browsers
         {
           tagName: 'link',
